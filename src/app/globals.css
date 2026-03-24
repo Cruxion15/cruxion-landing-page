@@ -2,26 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #020617;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #f1f5f9;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-primary-blue to-primary-light bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-surface-card/80 backdrop-blur-xl border border-border-subtle rounded-2xl transition-all duration-500;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(59, 130, 246, 0.25);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.08), 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(15, 23, 42, 0.95);
+    transform: translateY(-2px);
+  }
+
+  .glass-card-hover {
+    @apply glass-card;
   }
 }
