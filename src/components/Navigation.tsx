@@ -22,11 +22,12 @@ export default function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-0" aria-label="Cruxion home">
+          <a href="#" className="flex items-center gap-2" aria-label="Cruxion home">
+            <img src="/icon.svg" alt="Cruxion icon" className="h-7 w-7 rounded-md" />
             <span className="text-xl font-bold tracking-tight text-text-primary">
               Crux
             </span>
-            <span className="text-xl font-bold tracking-tight text-primary-blue">
+            <span className="-ml-[0.35rem] text-xl font-bold tracking-tight text-primary-blue">
               ion
             </span>
           </a>
