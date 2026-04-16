@@ -15,6 +15,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   title: "Cruxion — Where understanding is the output",
   description:
     "The only platform that verifies understanding — not just output. Built for Karnataka engineering colleges. VTU aligned. Plugs into your assignment component with zero curriculum changes.",
