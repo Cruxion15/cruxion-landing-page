@@ -44,8 +44,15 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* CTAs */}
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="https://app.cruxion.in/login"
+              className="inline-flex items-center rounded-lg border border-border-subtle px-4 py-2.5 text-sm font-medium text-text-secondary transition-all duration-300 hover:border-primary-blue/40 hover:text-text-primary"
+              aria-label="Sign in to your account"
+            >
+              Sign in
+            </a>
             <a
               href="#cta"
               className="inline-flex items-center rounded-lg bg-primary-blue px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary-blue/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
@@ -106,9 +113,17 @@ export default function Navigation() {
                 </a>
               ))}
               <a
+                href="https://app.cruxion.in/login"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 inline-flex items-center justify-center rounded-lg border border-border-subtle px-5 py-3 text-sm font-medium text-text-secondary"
+                aria-label="Sign in to your account"
+              >
+                Sign in
+              </a>
+              <a
                 href="#cta"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary-blue px-5 py-3 text-sm font-semibold text-white"
+                className="inline-flex items-center justify-center rounded-lg bg-primary-blue px-5 py-3 text-sm font-semibold text-white"
                 aria-label="Request a pilot program"
               >
                 Request pilot &rarr;
