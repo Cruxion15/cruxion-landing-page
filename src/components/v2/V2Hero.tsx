@@ -58,7 +58,7 @@ export default function V2Hero() {
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-blue/30 bg-primary-blue/10 px-4 py-1.5 text-xs font-medium text-primary-light backdrop-blur"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent-green" />
-          AI-native · Cloud-first engineering · Live in one week
+          AI-native · CS + EC · Cloud-first engineering
         </motion.div>
 
         <h1 className="mx-auto max-w-5xl text-4xl font-bold leading-[0.95] tracking-[-0.035em] sm:text-5xl md:text-7xl lg:text-[5.5rem]">

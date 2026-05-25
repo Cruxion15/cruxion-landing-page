@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, AnimatePresence, MotionValue } from "framer-motion";
 import { SplitText } from "../AnimationUtils";
 
 type Phase = {
@@ -11,13 +11,14 @@ type Phase = {
   body: string;
   what: { title: string; detail: string }[];
   icon: string;
-  color: string; // hex for marker glow / accent
+  color: string;
   textClass: string;
   borderClass: string;
-  range: [number, number]; // when this phase is "active"
+  range: [number, number];
 };
 
-const PHASES: Phase[] = [
+/* ─── CS phases ─── */
+const CS_PHASES: Phase[] = [
   {
     n: "01",
     name: "Apprentice",
@@ -68,7 +69,59 @@ const PHASES: Phase[] = [
   },
 ];
 
-/* Road stop — a node along the path; lights up when the marker arrives */
+/* ─── EC phases ─── */
+const EC_PHASES: Phase[] = [
+  {
+    n: "01",
+    name: "Circuits",
+    tagline: "Wiring before writing. Understanding before code.",
+    body: "The EC student arrives and meets the 3D component lab. They wire LEDs, map GPIO pins, and build mental models of signal flow — before a single line of embedded C is written.",
+    what: [
+      { title: "3D component lab", detail: "Wire circuits virtually before touching physical hardware. Every pin explained in context, not buried in a datasheet." },
+      { title: "Pin mapping", detail: "GPIO pins, power rails, ground — the physical language of embedded systems, made visual." },
+      { title: "Mental model first", detail: "Input → controller → output. Know the signal flow before writing a single semicolon." },
+    ],
+    icon: "⚡",
+    color: "#3B82F6",
+    textClass: "text-primary-blue",
+    borderClass: "border-primary-blue/50",
+    range: [0.12, 0.42],
+  },
+  {
+    n: "02",
+    name: "Embedded",
+    tagline: "Code that talks to real hardware.",
+    body: "The embedded C workspace opens. The student reads sensor data, writes control logic, and watches the serial monitor output live — with an AI mentor checking understanding, not just syntax.",
+    what: [
+      { title: "Embedded C workspace", detail: "Arduino-style editor with syntax highlighting. Compile errors caught before they burn components." },
+      { title: "Live serial monitor", detail: "See sensor readings update in real time. Code that produces visible, physical output." },
+      { title: "Understanding Verified", detail: "Defend why RED_LED goes HIGH when dist < 20. Same UV rigour as CS — applied to hardware logic." },
+    ],
+    icon: "◑",
+    color: "#93C5FD",
+    textClass: "text-primary-light",
+    borderClass: "border-primary-light/50",
+    range: [0.42, 0.72],
+  },
+  {
+    n: "03",
+    name: "IoT",
+    tagline: "Hardware meets the cloud — on AWS.",
+    body: "The Architect tier. The student adds a WiFi module, publishes sensor readings via MQTT to AWS IoT Core, and a live dashboard lights up. Cloud-connected hardware — the way industry builds it.",
+    what: [
+      { title: "MQTT → AWS IoT Core", detail: "Device shadow, rule engine, message broker — the real cloud stack behind industrial IoT." },
+      { title: "Live cloud dashboard", detail: "Grafana shows real-time sensor data. Students see their hardware talking to the cloud." },
+      { title: "Industry-ready", detail: "Smart cities, precision agriculture, industrial monitoring — these are the systems EC architects design." },
+    ],
+    icon: "☁",
+    color: "#F59E0B",
+    textClass: "text-accent-amber",
+    borderClass: "border-accent-amber/50",
+    range: [0.72, 1.0],
+  },
+];
+
+/* ─── Road stop ─── */
 function RoadStop({
   phase,
   position,
@@ -76,15 +129,11 @@ function RoadStop({
   progress,
 }: {
   phase: Phase;
-  position: number; // 0-1 along the road
-  arrivesAt: number; // scroll progress at which the marker reaches this stop
+  position: number;
+  arrivesAt: number;
   progress: MotionValue<number>;
 }) {
-  const arrived = useTransform(
-    progress,
-    [arrivesAt - 0.03, arrivesAt],
-    [0, 1]
-  );
+  const arrived = useTransform(progress, [arrivesAt - 0.03, arrivesAt], [0, 1]);
   const scale = useTransform(arrived, [0, 1], [1, 1.5]);
   const ringOp = useTransform(arrived, [0, 1], [0.25, 1]);
   const labelOp = useTransform(arrived, [0, 1], [0.4, 1]);
@@ -95,16 +144,12 @@ function RoadStop({
         .toString(16)
         .padStart(2, "0")}`
   );
-
   return (
     <div
       className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
       style={{ left: `${position * 100}%` }}
     >
-      <motion.div
-        style={{ scale, boxShadow: shadow }}
-        className="relative h-3 w-3 rounded-full"
-      >
+      <motion.div style={{ scale, boxShadow: shadow }} className="relative h-3 w-3 rounded-full">
         <motion.div
           style={{ opacity: ringOp, backgroundColor: phase.color }}
           className="absolute inset-0 rounded-full"
@@ -120,24 +165,19 @@ function RoadStop({
   );
 }
 
-/* Traveling marker — glides along the road as scroll advances */
+/* ─── Traveling marker ─── */
 function RoadMarker({ progress }: { progress: MotionValue<number> }) {
-  /* Position interpolates between road stops at scroll 0.10 → 0.20 → 0.50 → 0.85 */
   const x = useTransform(
     progress,
-    [0.05, 0.20, 0.50, 0.85],
+    [0.05, 0.2, 0.5, 0.85],
     ["8%", "22%", "55%", "88%"]
   );
-  /* Color shifts as marker passes each phase */
   const color = useTransform(
     progress,
-    [0.05, 0.30, 0.55, 0.85],
+    [0.05, 0.3, 0.55, 0.85],
     ["#475c8c", "#3B82F6", "#93C5FD", "#F59E0B"]
   );
-  const glow = useTransform(
-    color,
-    (c) => `0 0 24px ${c}, 0 0 48px ${c}80`
-  );
+  const glow = useTransform(color, (c) => `0 0 24px ${c}, 0 0 48px ${c}80`);
   return (
     <motion.div
       style={{ left: x, backgroundColor: color, boxShadow: glow }}
@@ -146,8 +186,8 @@ function RoadMarker({ progress }: { progress: MotionValue<number> }) {
   );
 }
 
-/* The road itself — a horizontal line with fill that progresses */
-function Road({ progress }: { progress: MotionValue<number> }) {
+/* ─── Road ─── */
+function Road({ progress, phases }: { progress: MotionValue<number>; phases: Phase[] }) {
   const fillWidth = useTransform(progress, [0.05, 0.95], ["0%", "100%"]);
   return (
     <div className="relative h-[2px] w-full rounded-full bg-white/[0.08]">
@@ -155,43 +195,31 @@ function Road({ progress }: { progress: MotionValue<number> }) {
         style={{ width: fillWidth }}
         className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-primary-blue via-primary-light to-accent-amber"
       />
-      <RoadStop phase={PHASES[0]} position={0.22} arrivesAt={0.20} progress={progress} />
-      <RoadStop phase={PHASES[1]} position={0.55} arrivesAt={0.50} progress={progress} />
-      <RoadStop phase={PHASES[2]} position={0.88} arrivesAt={0.85} progress={progress} />
+      <RoadStop phase={phases[0]} position={0.22} arrivesAt={0.20} progress={progress} />
+      <RoadStop phase={phases[1]} position={0.55} arrivesAt={0.50} progress={progress} />
+      <RoadStop phase={phases[2]} position={0.88} arrivesAt={0.85} progress={progress} />
       <RoadMarker progress={progress} />
     </div>
   );
 }
 
-/* The detailed card for one phase — opacity tied to phase's active range */
-function PhaseCard({
-  phase,
-  progress,
-}: {
-  phase: Phase;
-  progress: MotionValue<number>;
-}) {
+/* ─── Phase detail card ─── */
+function PhaseCard({ phase, progress }: { phase: Phase; progress: MotionValue<number> }) {
   const [start, end] = phase.range;
-
-  /* Hard step — same pattern as SceneFrame / NarrativeCard.
-     Crossfade ranges caused WAAPI degradation beyond the first phase in FM v12. */
   const opacity = useTransform(progress, (v) =>
     v >= start && v < end ? 1 : 0
   );
-  const visibility = useTransform(opacity, (v) =>
-    v > 0 ? "visible" : "hidden"
-  );
-  /* Entry slide — runs once on arrival, stays at 0 for the rest of the phase */
+  const visibility = useTransform(opacity, (v) => (v > 0 ? "visible" : "hidden"));
   const entryEnd = Math.min(start + 0.05, end - 0.01);
   const y = useTransform(progress, [start, entryEnd], [28, 0]);
 
   return (
     <motion.div
       style={{ opacity, visibility, y }}
-      className="absolute inset-0 overflow-y-auto flex items-start"
+      className="absolute inset-0 flex items-start overflow-y-auto"
     >
       <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
-        {/* Left — phase name + icon */}
+        {/* Left — icon + name */}
         <div>
           <div className="flex items-center gap-4">
             <motion.div
@@ -202,7 +230,7 @@ function PhaseCard({
               {phase.icon}
             </motion.div>
             <div>
-              <div className="text-[11px] font-mono uppercase tracking-[0.15em] text-text-tertiary">
+              <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-text-tertiary">
                 Phase {phase.n}
               </div>
               <div className={`text-3xl font-bold tracking-tight sm:text-4xl ${phase.textClass}`}>
@@ -213,12 +241,10 @@ function PhaseCard({
           <div className="mt-5 text-base font-semibold text-text-primary sm:text-lg">
             {phase.tagline}
           </div>
-          <p className="mt-3 text-sm leading-relaxed text-text-secondary">
-            {phase.body}
-          </p>
+          <p className="mt-3 text-sm leading-relaxed text-text-secondary">{phase.body}</p>
         </div>
 
-        {/* Right — what happens in this phase */}
+        {/* Right — what this phase contains */}
         <div className="space-y-3">
           {phase.what.map((w, i) => (
             <motion.div
@@ -252,6 +278,9 @@ export default function V2Tiers() {
     offset: ["start start", "end end"],
   });
 
+  const [branch, setBranch] = useState<"cs" | "ec">("cs");
+  const phases = branch === "cs" ? CS_PHASES : EC_PHASES;
+
   const headerOpacity = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [0, 1, 1, 0.5]);
 
   return (
@@ -266,17 +295,44 @@ export default function V2Tiers() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.10), transparent 55%), radial-gradient(ellipse at 50% 100%, rgba(245,158,11,0.06), transparent 55%)",
+              branch === "cs"
+                ? "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.10), transparent 55%), radial-gradient(ellipse at 50% 100%, rgba(245,158,11,0.06), transparent 55%)"
+                : "radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.10), transparent 55%), radial-gradient(ellipse at 50% 100%, rgba(0,151,156,0.06), transparent 55%)",
           }}
         />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl">
           {/* Header */}
           <motion.div style={{ opacity: headerOpacity }} className="text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-blue/50 bg-primary-blue/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary-blue/50 bg-primary-blue/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary-light">
               The Cruxion roadmap
             </div>
-            <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-[1.05] tracking-[-0.03em] sm:text-5xl">
+
+            {/* Branch toggle */}
+            <div className="mt-3 inline-flex overflow-hidden rounded-xl border border-[#2E4A6E]">
+              <button
+                onClick={() => setBranch("cs")}
+                className={`px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  branch === "cs"
+                    ? "bg-primary-blue text-white"
+                    : "bg-transparent text-text-tertiary hover:text-white"
+                }`}
+              >
+                CS · Software
+              </button>
+              <button
+                onClick={() => setBranch("ec")}
+                className={`px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
+                  branch === "ec"
+                    ? "bg-accent-amber text-[#060E1A]"
+                    : "bg-transparent text-text-tertiary hover:text-white"
+                }`}
+              >
+                EC · Hardware
+              </button>
+            </div>
+
+            <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-bold leading-[1.05] tracking-[-0.03em] sm:text-5xl">
               <SplitText className="block text-text-primary">
                 The same student.
               </SplitText>
@@ -287,23 +343,34 @@ export default function V2Tiers() {
                 transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="block bg-gradient-to-r from-primary-blue via-primary-light to-accent-amber bg-clip-text text-transparent"
               >
-                Three phases of becoming.
+                {branch === "cs" ? "Three phases of becoming." : "Three phases of building."}
               </motion.span>
             </h2>
           </motion.div>
 
-          {/* THE ROAD */}
-          <div className="mx-auto mt-6 mb-8 sm:mt-12 sm:mb-14 w-full max-w-4xl px-8 sm:px-12">
+          {/* Road */}
+          <div className="mx-auto mt-6 mb-8 w-full max-w-4xl px-8 sm:mt-12 sm:mb-14 sm:px-12">
             <div className="relative py-8">
-              <Road progress={scrollYProgress} />
+              <Road progress={scrollYProgress} phases={phases} />
             </div>
           </div>
 
-          {/* PHASE DETAIL — swaps as marker travels */}
+          {/* Phase detail — swaps with branch toggle */}
           <div className="relative h-[55vh] sm:h-[50vh] lg:h-[48vh]">
-            {PHASES.map((phase) => (
-              <PhaseCard key={phase.n} phase={phase} progress={scrollYProgress} />
-            ))}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={branch}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.22 }}
+                className="absolute inset-0"
+              >
+                {phases.map((phase) => (
+                  <PhaseCard key={phase.n} phase={phase} progress={scrollYProgress} />
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
