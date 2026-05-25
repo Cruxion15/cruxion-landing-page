@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
   },
-  title: "Cruxion — Where understanding is the output",
+  title: "Cruxion — Engineering outcome infrastructure",
   description:
-    "The only platform that verifies understanding — not just output. Built for Karnataka engineering colleges. VTU aligned. Plugs into your assignment component with zero curriculum changes.",
+    "The AI-native platform that takes engineering students from classroom to industry-ready. Skill tracks, Socratic AI mentorship, and verified outcomes.",
   keywords: [
     "Cruxion",
     "VTU",
@@ -30,12 +30,13 @@ export const metadata: Metadata = {
     "understanding verification",
     "assignment grading",
     "placement preparation",
+    "engineering education",
   ],
   authors: [{ name: "Cruxion", url: "https://cruxion.in" }],
   openGraph: {
-    title: "Cruxion — Where understanding is the output",
+    title: "Cruxion — Engineering outcome infrastructure",
     description:
-      "The only platform that verifies understanding — not just output. Built for Karnataka engineering colleges.",
+      "The AI-native platform that takes engineering students from classroom to industry-ready.",
     url: "https://cruxion.in",
     siteName: "Cruxion",
     type: "website",
@@ -43,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cruxion — Where understanding is the output",
+    title: "Cruxion — Engineering outcome infrastructure",
     description:
-      "The only platform that verifies understanding — not just output. Built for Karnataka engineering colleges.",
+      "The AI-native platform that takes engineering students from classroom to industry-ready.",
   },
   robots: {
     index: true,

@@ -11,8 +11,9 @@ const config: Config = {
       colors: {
         surface: {
           bg: "#020617",
-          card: "#0f172a",
-          "card-secondary": "#1e293b",
+          card: "#0e1c34",          /* subtle lift above content bg */
+          "card-secondary": "#111f38",
+          "card-raised": "#142040", /* slightly raised, still navy */
         },
         border: {
           subtle: "rgba(255,255,255,0.08)",
@@ -26,9 +27,9 @@ const config: Config = {
           green: "#22c55e",
         },
         text: {
-          primary: "#f1f5f9",
-          secondary: "#94a3b8",
-          tertiary: "#64748b",
+          primary: "#ffffff",
+          secondary: "#dde6f5",
+          tertiary: "#b0c4de",    /* bumped — tertiary must be readable on raised panes */
         },
       },
       fontFamily: {

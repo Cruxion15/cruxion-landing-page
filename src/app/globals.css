@@ -66,3 +66,17 @@ body {
     @apply glass-card;
   }
 }
+
+/* ─── Mobile touch optimisation ─── */
+button, a, [role="button"] {
+  touch-action: manipulation; /* removes 300ms tap delay on iOS */
+}
+
+/* ─── Reduced-motion: disable scroll-driven entry animations ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
