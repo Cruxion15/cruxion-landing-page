@@ -21,22 +21,28 @@ export const metadata: Metadata = {
   },
   title: "Cruxion — Engineering outcome infrastructure",
   description:
-    "The AI-native platform that takes engineering students from classroom to industry-ready. Skill tracks, Socratic AI mentorship, and verified outcomes.",
+    "Cruxion is an AI-native engineering education platform for CS and EC students. Structured skill tracks from embedded systems to cloud engineering on AWS, GCP, and Azure — with Socratic AI mentorship and verified outcomes employers look for.",
   keywords: [
     "Cruxion",
-    "VTU",
-    "Karnataka engineering colleges",
-    "coding platform",
+    "engineering education platform",
+    "AI mentor for engineering students",
+    "cloud engineering track",
+    "embedded systems education",
+    "AWS GCP Azure for students",
+    "CS and EC skill tracks",
     "understanding verification",
-    "assignment grading",
-    "placement preparation",
-    "engineering education",
+    "Apprentice Engineer Architect",
+    "Arduino IoT education",
+    "placement-ready engineers",
+    "engineering college platform",
+    "Crucible by Cruxion",
+    "hardware software engineering",
   ],
   authors: [{ name: "Cruxion", url: "https://cruxion.in" }],
   openGraph: {
     title: "Cruxion — Engineering outcome infrastructure",
     description:
-      "The AI-native platform that takes engineering students from classroom to industry-ready.",
+      "AI-native platform for CS and EC engineering students. Cloud, embedded systems, IoT — structured skill tracks with verified outcomes. Apprentice → Engineer → Architect.",
     url: "https://cruxion.in",
     siteName: "Cruxion",
     type: "website",
@@ -46,12 +52,56 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cruxion — Engineering outcome infrastructure",
     description:
-      "The AI-native platform that takes engineering students from classroom to industry-ready.",
+      "AI-native platform for CS and EC engineering students. Cloud, embedded systems, IoT — structured skill tracks with verified outcomes. Apprentice → Engineer → Architect.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
+  alternates: {
+    canonical: "https://cruxion.in",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Cruxion",
+  url: "https://cruxion.in",
+  logo: "https://cruxion.in/icon.svg",
+  description:
+    "Cruxion is an AI-native engineering education platform that takes CS and EC students from classroom to industry-ready. Structured skill tracks — from system design to cloud engineering on AWS, GCP, and Azure, and from embedded systems to IoT on Arduino — with Socratic AI mentorship and verified outcomes.",
+  foundingLocation: "India",
+  applicationCategory: "EducationalApplication",
+  audience: {
+    "@type": "EducationalAudience",
+    educationalRole: "student",
+    audienceType: "Engineering students — CS, ECE, AI/ML, IoT, Embedded Systems",
+  },
+  offers: [
+    {
+      "@type": "Course",
+      name: "CS · Software Engineering Track",
+      description: "Apprentice → Engineer → Architect. System design, cloud engineering on AWS/GCP/Azure, AI-mentored assignments with verified understanding.",
+      provider: { "@type": "Organization", name: "Cruxion" },
+    },
+    {
+      "@type": "Course",
+      name: "EC · Hardware Engineering Track",
+      description: "Circuits → Embedded Systems → IoT. Arduino, MQTT, AWS IoT Core — from wiring LEDs to live cloud dashboards.",
+      provider: { "@type": "Organization", name: "Cruxion" },
+    },
+  ],
+  sameAs: [
+    "https://app.cruxion.in",
+  ],
 };
 
 export default function RootLayout({
@@ -61,6 +111,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

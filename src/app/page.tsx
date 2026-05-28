@@ -21,7 +21,10 @@ const Journey = dynamic(() => import("@/components/v2/Journey"), {
 export const metadata = {
   title: "Cruxion — Engineering outcome infrastructure",
   description:
-    "The AI-native platform that takes engineering students from classroom to industry-ready. Skill tracks, Socratic AI mentorship, and verified outcomes. Apprentice → Engineer → Architect.",
+    "Cruxion gives engineering colleges structured skill tracks for CS and EC students — from system design to cloud engineering on AWS, GCP, and Azure, and from circuits to IoT on Arduino. Verified outcomes employers actually look for.",
+  alternates: {
+    canonical: "https://cruxion.in",
+  },
 };
 
 export default function Home() {
