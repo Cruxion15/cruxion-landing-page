@@ -16,6 +16,12 @@ export default function V2Nav() {
           Crux<span className="text-primary-blue">ion</span>
         </Link>
         <div className="flex items-center gap-5 text-xs">
+          <Link
+            href="/team"
+            className="hidden text-text-secondary transition-colors hover:text-text-primary sm:inline"
+          >
+            Team
+          </Link>
           <a
             href="https://app.cruxion.in"
             className="text-text-secondary transition-colors hover:text-text-primary"
