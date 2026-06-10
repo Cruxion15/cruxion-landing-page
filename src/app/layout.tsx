@@ -15,6 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cruxion.in"),
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
@@ -100,8 +101,17 @@ const jsonLd = {
     },
   ],
   sameAs: [
+    "https://www.linkedin.com/company/cruxion/",
     "https://app.cruxion.in",
   ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Cruxion",
+  url: "https://cruxion.in",
+  publisher: { "@type": "Organization", name: "Cruxion" },
 };
 
 export default function RootLayout({
@@ -115,6 +125,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="font-sans antialiased">{children}</body>
