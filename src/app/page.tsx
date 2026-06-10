@@ -5,6 +5,7 @@ import V2Tiers from "@/components/v2/V2Tiers";
 import V2Integration from "@/components/v2/V2Integration";
 import V2CTA from "@/components/v2/V2CTA";
 import Footer from "@/components/Footer";
+import JourneyPreload from "@/components/v2/JourneyPreload";
 
 /* Journey is the heaviest chunk (~8 scenes + scroll hooks).
    Dynamic import keeps the initial JS bundle lean — matches v1 load speed. */
@@ -31,6 +32,7 @@ export default function Home() {
   return (
     <>
       <V2Nav />
+      <JourneyPreload />
       <main className="bg-surface-bg text-text-primary">
         <V2Hero />
         <V2Tiers />
