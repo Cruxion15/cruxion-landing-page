@@ -36,8 +36,8 @@ export default function V2Integration() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const leftX = useTransform(scrollYProgress, [0.1, 0.5], [-60, 0]);
-  const rightX = useTransform(scrollYProgress, [0.1, 0.5], [60, 0]);
+  const leftX = useTransform(scrollYProgress, [0.1, 0.5], [-24, 0]);
+  const rightX = useTransform(scrollYProgress, [0.1, 0.5], [24, 0]);
   const seamOp = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
 
   return (
