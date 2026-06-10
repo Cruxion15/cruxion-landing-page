@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "Cruxion — Engineering outcome infrastructure";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logo = await readFile(join(process.cwd(), "public/og-logo.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -13,53 +18,26 @@ export default function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          padding: "80px",
-          background: "#0c1324",
-          color: "#ffffff",
+          gap: "12px",
+          background: "#000520",
           fontFamily: "sans-serif",
         }}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logoSrc} width={860} height={374} alt="" />
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            marginBottom: "32px",
-          }}
-        >
-          <div
-            style={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "14px",
-              background: "#357DF1",
-            }}
-          />
-          <div style={{ fontSize: "40px", fontWeight: 700 }}>Cruxion</div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            fontSize: "64px",
-            fontWeight: 700,
-            lineHeight: 1.1,
-          }}
-        >
-          <div>Engineering outcome</div>
-          <div>infrastructure</div>
-        </div>
-        <div
-          style={{
-            fontSize: "30px",
+            fontSize: "32px",
             color: "#9fb3d1",
-            marginTop: "28px",
-            maxWidth: "900px",
+            textAlign: "center",
+            maxWidth: "960px",
+            lineHeight: 1.3,
           }}
         >
-          AI-native skill tracks for CS &amp; EC students — cloud, embedded
-          systems, IoT. Apprentice → Engineer → Architect.
+          AI-native engineering skill tracks — cloud, embedded systems, IoT.
+          Apprentice → Engineer → Architect.
         </div>
       </div>
     ),
