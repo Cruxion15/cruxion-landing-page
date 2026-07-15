@@ -43,11 +43,11 @@ const SCENES: Scene[] = [
     narrative: {
       tag: "Dashboard",
       title: "A student opens Cruxion.",
-      body: "One login. One view. Their faculty's syllabus, their cohort, and their tracks — already loaded.",
+      body: "One login. One view. Their faculty's syllabus, their cohort, and their tracks, already loaded.",
       bullets: [
-        "Single Google login — no passwords for faculty to reset",
-        "Section-scoped — students only see what their faculty assigned",
-        "Browser-only — nothing to install, nothing to maintain",
+        "Single Google login: no passwords for faculty to reset",
+        "Section-scoped: students only see what their faculty assigned",
+        "Browser-only: nothing to install, nothing to maintain",
       ],
     },
   },
@@ -57,10 +57,10 @@ const SCENES: Scene[] = [
     narrative: {
       tag: "Assignments · Weekly practice",
       title: "Weekly assignments, status-aware.",
-      body: "Faculty assigns problem sets aligned to the syllabus. Students see what's open, what's verified, and what needs a re-attempt — at a glance.",
+      body: "Faculty assigns problem sets aligned to the syllabus. Students see what's open, what's verified, and what needs a re-attempt, at a glance.",
       bullets: [
         "Weekly problem sets aligned to your university curriculum",
-        "Status badges per submission — Open, Verified, Review, Complete",
+        "Status badges per submission: Open, Verified, Review, Complete",
         "Re-attempts allowed when understanding isn't yet verified",
       ],
     },
@@ -71,11 +71,11 @@ const SCENES: Scene[] = [
     narrative: {
       tag: "Inside an assignment · AI Mentor",
       title: "A mentor that asks, never tells.",
-      body: "Click a problem and the 3-pane workspace opens — problem statement on the left, code editor in the middle, Socratic AI mentor on the right.",
+      body: "Click a problem and the 3-pane workspace opens: problem statement on the left, code editor in the middle, Socratic AI mentor on the right.",
       bullets: [
         "Three-pane workspace: problem · editor · AI mentor",
         "Mentor asks questions instead of handing out answers",
-        "Token budget shown live — students see the cost of leaning on it",
+        "Token budget shown live: students see the cost of leaning on it",
       ],
     },
   },
@@ -85,11 +85,11 @@ const SCENES: Scene[] = [
     narrative: {
       tag: "Understanding Verification",
       title: "Marks reflect ability, not output.",
-      body: "After the code passes test cases, three questions appear — referencing specific line numbers in the student's own submission.",
+      body: "After the code passes test cases, three questions appear, referencing specific line numbers in the student's own submission.",
       bullets: [
         "Questions cite real line numbers from the student's code",
         "AI flags vague, copied, or LLM-generated answers automatically",
-        "Three verdicts: Advance, Verify, Reject — surfaced to faculty in real time",
+        "Three verdicts: Advance, Verify, Reject, surfaced to faculty in real time",
       ],
     },
   },
@@ -98,11 +98,11 @@ const SCENES: Scene[] = [
     start: 0.52, end: 0.63, sidebar: "crucible",
     narrative: {
       tag: "Crucible · Skill tracks",
-      title: "Hands-on tracks — beyond the syllabus.",
-      body: "Crucible is the engineering creation environment. Long-form tracks that go deeper than any semester can — LLM Engineering, Cloud Engineering, Distributed Systems.",
+      title: "Hands-on tracks: beyond the syllabus.",
+      body: "Crucible is the engineering creation environment. Long-form tracks that go deeper than any semester can: LLM Engineering, Cloud Engineering, Distributed Systems.",
       bullets: [
         "Each track has three tiers: Apprentice → Engineer → Architect",
-        "Faculty enrolls a whole section — no individual purchases",
+        "Faculty enrolls a whole section: no individual purchases",
         "Built for engineering depth: LLMs, cloud, system design",
       ],
     },
@@ -115,9 +115,9 @@ const SCENES: Scene[] = [
       title: "First principles, made visible.",
       body: "Inside an Apprentice-tier lesson. Type any sentence, watch the model split it into tokens, see the integer sequence the machine actually consumes.",
       bullets: [
-        "Interactive lessons — every concept is a small experiment",
-        "Visual reasoning — diagrams, animations, real outputs",
-        "Foundation before fluency — no shortcuts, no copy-paste",
+        "Interactive lessons: every concept is a small experiment",
+        "Visual reasoning: diagrams, animations, real outputs",
+        "Foundation before fluency: no shortcuts, no copy-paste",
       ],
     },
   },
@@ -126,12 +126,12 @@ const SCENES: Scene[] = [
     start: 0.75, end: 0.86, sidebar: "crucible",
     narrative: {
       tag: "Crucible lesson · Architect tier",
-      title: "Designing what scales — on cloud.",
-      body: "Architect-tier lessons move from writing functions to designing services. Cloud-native by default — on AWS, GCP, Azure.",
+      title: "Designing what scales, on cloud.",
+      body: "Architect-tier lessons move from writing functions to designing services. Cloud-native by default: on AWS, GCP, Azure.",
       bullets: [
         "Design canvases for distributed systems and ML pipelines",
-        "Cloud computing as a first-class discipline — not an afterthought",
-        "Trade-off reasoning made explicit — the way real teams ship",
+        "Cloud computing as a first-class discipline, not an afterthought",
+        "Trade-off reasoning made explicit, the way real teams ship",
       ],
     },
   },
@@ -141,11 +141,11 @@ const SCENES: Scene[] = [
     narrative: {
       tag: "Exam Mode · Faculty Monitor",
       title: "Lab-grade integrity. Zero overhead.",
-      body: "Faculty see every student in one table — submission status, anti-cheat flags, tests passed, UV verdict, marks.",
+      body: "Faculty see every student in one table: submission status, anti-cheat flags, tests passed, UV verdict, marks.",
       bullets: [
-        "Live flags — Tab-switch, Paste, and Resume counts per student",
-        "UV outcome shown row-level: Passed, Verify, Failed — no manual review",
-        "End Exam · Refresh · Export CSV — one-button invigilator workflow",
+        "Live flags: Tab-switch, Paste, and Resume counts per student",
+        "UV outcome shown row-level: Passed, Verify, Failed, no manual review",
+        "End Exam · Refresh · Export CSV: one-button invigilator workflow",
       ],
     },
   },
@@ -159,10 +159,10 @@ const EC_SCENES: Scene[] = [
     narrative: {
       tag: "Hardware Dashboard",
       title: "An EC student opens Cruxion.",
-      body: "One login. Hardware tracks, component library, and their batch's projects — already loaded. From first year, not final year.",
+      body: "One login. Hardware tracks, component library, and their batch's projects, already loaded. From first year, not final year.",
       bullets: [
-        "Hardware tracks from Year 1 — Apprentice → Engineer → Architect",
-        "Component lending library: check out, build, return — all tracked",
+        "Hardware tracks from Year 1: Apprentice → Engineer → Architect",
+        "Component lending library: check out, build, return, all tracked",
         "Peer project wall: see what second and third years shipped",
       ],
     },
@@ -176,7 +176,7 @@ const EC_SCENES: Scene[] = [
       body: "The 3D component lab opens. Before a single line of embedded C, the student maps GPIO pins, follows signal flow, and connects the circuit one pin at a time.",
       bullets: [
         "3D virtual lab: understand every component before touching physical hardware",
-        "Pin inspector: every GPIO pin explained in context — not in a 40-page datasheet",
+        "Pin inspector: every GPIO pin explained in context, not in a 40-page datasheet",
         "Socratic checkpoint: defend your wiring choices before the next step unlocks",
       ],
     },
@@ -187,7 +187,7 @@ const EC_SCENES: Scene[] = [
     narrative: {
       tag: "Embedded Code · Arduino C",
       title: "Code that talks to hardware.",
-      body: "The editor opens with the circuit already wired. The student writes embedded C — reading sensors, controlling outputs, watching the serial monitor respond in real time.",
+      body: "The editor opens with the circuit already wired. The student writes embedded C: reading sensors, controlling outputs, watching the serial monitor respond in real time.",
       bullets: [
         "Auto-linked to the circuit: the editor knows which pins are wired and why",
         "Serial monitor shows live output from simulated hardware as the code runs",
@@ -201,11 +201,11 @@ const EC_SCENES: Scene[] = [
     narrative: {
       tag: "IoT · Architect Tier",
       title: "Hardware meets the cloud.",
-      body: "Architect tier. The Arduino connects via WiFi, pushes sensor readings to AWS IoT Core, and a live dashboard lights up. Cloud-connected hardware — the way industry builds it.",
+      body: "Architect tier. The Arduino connects via WiFi, pushes sensor readings to AWS IoT Core, and a live dashboard lights up. Cloud-connected hardware, the way industry builds it.",
       bullets: [
         "MQTT → AWS IoT Core → real-time dashboard in one lesson",
         "Students see their sensor data appear live in the cloud",
-        "The bridge between Embedded Systems and Cloud Engineering — from Year 1",
+        "The bridge between Embedded Systems and Cloud Engineering, from Year 1",
       ],
     },
   },
@@ -294,7 +294,7 @@ function NarrativeCard({
   );
 }
 
-/* ─── EC narrative card — amber accent ─── */
+/* ─── EC narrative card: amber accent ─── */
 function ECNarrativeCard({
   scene,
   progress,
@@ -406,7 +406,7 @@ export default function Journey() {
         />
 
         <div className="relative z-10 mx-auto grid h-full w-full max-w-[1600px] grid-cols-1 items-center gap-6 px-2 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-8 lg:px-12">
-          {/* LEFT — narrative pane (desktop only) */}
+          {/* LEFT: narrative pane (desktop only) */}
           <div className="relative hidden lg:block lg:h-[84vh] overflow-hidden">
             <AnimatePresence mode="wait">
               {branch === "cs" ? (
@@ -435,7 +435,7 @@ export default function Journey() {
             </AnimatePresence>
           </div>
 
-          {/* RIGHT — prominent toggle + app shell */}
+          {/* RIGHT: prominent toggle + app shell */}
           <motion.div
             style={{ y: shellY, opacity: shellOp }}
             className="flex w-full flex-col gap-3"
@@ -471,7 +471,7 @@ export default function Journey() {
 
             {/* ── App shell ── */}
             <div className="relative h-[57vh] sm:h-[65vh] lg:h-[76vh] w-full overflow-hidden rounded-2xl border border-[#2E4A6E] bg-[#0A1525] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]">
-              {/* Browser top bar — clean */}
+              {/* Browser top bar: clean */}
               <div className="flex h-8 items-center gap-1.5 border-b border-[#2E4A6E] bg-[#0F1E32] px-3">
                 <div className="h-2 w-2 rounded-full bg-[#ff5f57]" />
                 <div className="h-2 w-2 rounded-full bg-[#febc2e]" />
@@ -534,7 +534,7 @@ export default function Journey() {
                 </nav>
               </aside>
 
-              {/* Scene content — CS or EC */}
+              {/* Scene content: CS or EC */}
               <div className="relative flex-1 overflow-hidden bg-[#0A1525]">
                 <AnimatePresence mode="wait">
                   {branch === "cs" && (

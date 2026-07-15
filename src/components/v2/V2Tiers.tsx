@@ -26,7 +26,7 @@ const CS_PHASES: Phase[] = [
     body: "The student arrives without assumptions. Lessons that show, not tell. They build intuition before they build systems.",
     what: [
       { title: "Interactive lessons", detail: "Type a sentence, watch it become tokens. Reason from first principles." },
-      { title: "Visual reasoning", detail: "Diagrams, animations, real outputs — concepts you can touch." },
+      { title: "Visual reasoning", detail: "Diagrams, animations, real outputs: concepts you can touch." },
       { title: "Foundation tier", detail: "No shortcuts. No copy-paste. Just understanding." },
     ],
     icon: "◐",
@@ -39,9 +39,9 @@ const CS_PHASES: Phase[] = [
     n: "02",
     name: "Engineer",
     tagline: "Building real systems with a mentor at their elbow.",
-    body: "Code that runs. Tests that pass. An AI mentor that asks questions instead of handing out answers — and a verification layer that confirms the student can defend every line.",
+    body: "Code that runs. Tests that pass. An AI mentor that asks questions instead of handing out answers, and a verification layer that confirms the student can defend every line.",
     what: [
-      { title: "3-pane workspace", detail: "Problem · editor · Socratic AI mentor — together on every assignment." },
+      { title: "3-pane workspace", detail: "Problem · editor · Socratic AI mentor, together on every assignment." },
       { title: "Token-budget mentor", detail: "Hints earn cost. Effort is the currency students learn to spend." },
       { title: "Understanding Verified", detail: "Every submission earns marks only when the student can defend it." },
     ],
@@ -54,12 +54,12 @@ const CS_PHASES: Phase[] = [
   {
     n: "03",
     name: "Architect",
-    tagline: "Designing what scales — on cloud, in production.",
+    tagline: "Designing what scales, on cloud, in production.",
     body: "The student moves from writing functions to designing services. Cloud-native by default. Trade-offs become the conversation.",
     what: [
-      { title: "Cloud-native design", detail: "AWS, GCP, Azure primitives — the way real teams ship to production." },
+      { title: "Cloud-native design", detail: "AWS, GCP, Azure primitives, the way real teams ship to production." },
       { title: "System design canvas", detail: "Distributed systems, ML pipelines, latency budgets, failure modes." },
-      { title: "Industry-ready", detail: "Reasoning about cost vs consistency vs scale — like a senior engineer." },
+      { title: "Industry-ready", detail: "Reasoning about cost vs consistency vs scale, like a senior engineer." },
     ],
     icon: "●",
     color: "#F59E0B",
@@ -75,10 +75,10 @@ const EC_PHASES: Phase[] = [
     n: "01",
     name: "Circuits",
     tagline: "Wiring before writing. Understanding before code.",
-    body: "The EC student arrives and meets the 3D component lab. They wire LEDs, map GPIO pins, and build mental models of signal flow — before a single line of embedded C is written.",
+    body: "The EC student arrives and meets the 3D component lab. They wire LEDs, map GPIO pins, and build mental models of signal flow, before a single line of embedded C is written.",
     what: [
       { title: "3D component lab", detail: "Wire circuits virtually before touching physical hardware. Every pin explained in context, not buried in a datasheet." },
-      { title: "Pin mapping", detail: "GPIO pins, power rails, ground — the physical language of embedded systems, made visual." },
+      { title: "Pin mapping", detail: "GPIO pins, power rails, ground: the physical language of embedded systems, made visual." },
       { title: "Mental model first", detail: "Input → controller → output. Know the signal flow before writing a single semicolon." },
     ],
     icon: "⚡",
@@ -91,11 +91,11 @@ const EC_PHASES: Phase[] = [
     n: "02",
     name: "Embedded",
     tagline: "Code that talks to real hardware.",
-    body: "The embedded C workspace opens. The student reads sensor data, writes control logic, and watches the serial monitor output live — with an AI mentor checking understanding, not just syntax.",
+    body: "The embedded C workspace opens. The student reads sensor data, writes control logic, and watches the serial monitor output live, with an AI mentor checking understanding, not just syntax.",
     what: [
       { title: "Embedded C workspace", detail: "Arduino-style editor with syntax highlighting. Compile errors caught before they burn components." },
       { title: "Live serial monitor", detail: "See sensor readings update in real time. Code that produces visible, physical output." },
-      { title: "Understanding Verified", detail: "Defend why RED_LED goes HIGH when dist < 20. Same UV rigour as CS — applied to hardware logic." },
+      { title: "Understanding Verified", detail: "Defend why RED_LED goes HIGH when dist < 20. Same UV rigour as CS, applied to hardware logic." },
     ],
     icon: "◑",
     color: "#93C5FD",
@@ -106,12 +106,12 @@ const EC_PHASES: Phase[] = [
   {
     n: "03",
     name: "IoT",
-    tagline: "Hardware meets the cloud — on AWS.",
-    body: "The Architect tier. The student adds a WiFi module, publishes sensor readings via MQTT to AWS IoT Core, and a live dashboard lights up. Cloud-connected hardware — the way industry builds it.",
+    tagline: "Hardware meets the cloud, on AWS.",
+    body: "The Architect tier. The student adds a WiFi module, publishes sensor readings via MQTT to AWS IoT Core, and a live dashboard lights up. Cloud-connected hardware, the way industry builds it.",
     what: [
-      { title: "MQTT → AWS IoT Core", detail: "Device shadow, rule engine, message broker — the real cloud stack behind industrial IoT." },
+      { title: "MQTT → AWS IoT Core", detail: "Device shadow, rule engine, message broker: the real cloud stack behind industrial IoT." },
       { title: "Live cloud dashboard", detail: "Grafana shows real-time sensor data. Students see their hardware talking to the cloud." },
-      { title: "Industry-ready", detail: "Smart cities, precision agriculture, industrial monitoring — these are the systems EC architects design." },
+      { title: "Industry-ready", detail: "Smart cities, precision agriculture, industrial monitoring: these are the systems EC architects design." },
     ],
     icon: "☁",
     color: "#F59E0B",
@@ -219,7 +219,7 @@ function PhaseCard({ phase, progress }: { phase: Phase; progress: MotionValue<nu
       className="absolute inset-0 flex items-start overflow-y-auto"
     >
       <div className="grid w-full grid-cols-1 gap-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
-        {/* Left — icon + name */}
+        {/* Left: icon + name */}
         <div>
           <div className="flex items-center gap-4">
             <motion.div
@@ -244,7 +244,7 @@ function PhaseCard({ phase, progress }: { phase: Phase; progress: MotionValue<nu
           <p className="mt-3 text-sm leading-relaxed text-text-secondary">{phase.body}</p>
         </div>
 
-        {/* Right — what this phase contains */}
+        {/* Right: what this phase contains */}
         <div className="space-y-3">
           {phase.what.map((w, i) => (
             <motion.div
@@ -355,7 +355,7 @@ export default function V2Tiers() {
             </div>
           </div>
 
-          {/* Phase detail — swaps with branch toggle */}
+          {/* Phase detail: swaps with branch toggle */}
           <div className="relative h-[55vh] sm:h-[50vh] lg:h-[48vh]">
             <AnimatePresence mode="wait">
               <motion.div

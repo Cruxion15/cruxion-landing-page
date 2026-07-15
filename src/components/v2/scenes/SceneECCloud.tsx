@@ -17,7 +17,7 @@ const READINGS = [
   { label: "MQTT messages",   value: "143",    status: "Published",         color: "text-primary-light",bg: "bg-primary-blue/10", border: "border-primary-blue/20" },
 ];
 
-/* Each flow node animates in separately — hooks at component level */
+/* Each flow node animates in separately: hooks at component level */
 function FlowNode({
   node,
   i,
@@ -164,10 +164,10 @@ export default function SceneECCloud({
           className="rounded-xl border border-accent-amber/25 bg-accent-amber/5 px-3 py-2.5"
         >
           <div className="text-[10px] font-bold text-accent-amber">
-            ☁ Cloud-connected hardware — from Year 1
+            ☁ Cloud-connected hardware, from Year 1
           </div>
           <div className="mt-0.5 text-[9px] leading-relaxed text-text-secondary">
-            EC students ship real IoT systems — not simulations. AWS, MQTT,
+            EC students ship real IoT systems, not simulations. AWS, MQTT,
             live sensor data. The same stack industry uses.
           </div>
         </motion.div>

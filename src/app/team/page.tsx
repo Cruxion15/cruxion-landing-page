@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import TeamShowcase from "@/components/v2/TeamShowcase";
 
 export const metadata: Metadata = {
-  title: "Team — Cruxion",
+  title: "Cruxion Team",
   description:
-    "Meet the founding team behind Cruxion — engineers building outcome infrastructure for India's engineering colleges.",
+    "Meet the founding team behind Cruxion, engineers building outcome infrastructure for India's engineering colleges.",
   alternates: {
     canonical: "https://cruxion.in/team",
   },

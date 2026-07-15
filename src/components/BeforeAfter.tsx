@@ -66,7 +66,7 @@ export default function BeforeAfter() {
           <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-relaxed text-text-secondary sm:text-lg">
             Every subject has 10–20 marks completely at the faculty&apos;s discretion.
             Right now those marks come from handwritten submissions that students
-            copy in 30 minutes and faculty check in seconds. We replace that —
+            copy in 30 minutes and faculty check in seconds. We replace that,
             without touching anything the university controls.
           </p>
         </RevealOnScroll>
@@ -85,7 +85,7 @@ export default function BeforeAfter() {
               <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-500/[0.06] blur-[80px]" aria-hidden="true" />
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/[0.06] px-3 py-1">
                 <motion.span className="h-2 w-2 rounded-full bg-red-400" animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
-                <span className="text-xs font-semibold tracking-wide text-red-400">Right now — paper assignments</span>
+                <span className="text-xs font-semibold tracking-wide text-red-400">Right now: paper assignments</span>
               </div>
               <ul className="space-y-4" role="list">
                 {beforeItems.map((item, i) => (
@@ -114,7 +114,7 @@ export default function BeforeAfter() {
               <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-accent-green/[0.06] blur-[80px]" aria-hidden="true" />
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-green/20 bg-accent-green/[0.06] px-3 py-1">
                 <motion.span className="h-2 w-2 rounded-full bg-accent-green" animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 2, repeat: Infinity }} aria-hidden="true" />
-                <span className="text-xs font-semibold tracking-wide text-accent-green">With Cruxion — platform assignments</span>
+                <span className="text-xs font-semibold tracking-wide text-accent-green">With Cruxion: platform assignments</span>
               </div>
               <ul className="space-y-4" role="list">
                 {afterItems.map((item, i) => (

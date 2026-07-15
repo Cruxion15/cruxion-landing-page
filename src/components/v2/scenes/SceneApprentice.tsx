@@ -65,7 +65,7 @@ export default function SceneApprentice({ progress, range }: { progress: MotionV
             </span>
             <h2 className="mt-3 text-2xl font-bold text-white">Watch text become integers</h2>
             <p className="mt-1.5 text-sm font-medium text-white">
-              Type any text. The model sees it as numbered chunks — not letters, not words.
+              Type any text. The model sees it as numbered chunks, not letters, not words.
             </p>
           </motion.div>
 

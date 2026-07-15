@@ -47,7 +47,7 @@ export default function FacultyHeatmap() {
               whileHover={{ scale: 1.05, backgroundColor: "rgba(15,23,42,0.8)" }}
               transition={{ duration: 0.3 }}
             >
-              For faculty — live visibility
+              For faculty: live visibility
             </motion.span>
           </div>
         </RevealOnScroll>
@@ -157,7 +157,7 @@ export default function FacultyHeatmap() {
                 >
                   &#9873;
                 </motion.span>
-                <h3 className="text-sm font-bold text-accent-amber">At-risk students — auto-detected</h3>
+                <h3 className="text-sm font-bold text-accent-amber">At-risk students: auto-detected</h3>
               </div>
               <div className="space-y-3">
                 {atRisk.map((student, i) => (

@@ -29,7 +29,7 @@ function Row({ i, local, r }: { i: number; local: MotionValue<number>; r: (typeo
 
   return (
     <motion.div style={{ opacity: op, y }} className="border-b border-[#1C3050]">
-      {/* Mobile row — simplified 3-column */}
+      {/* Mobile row: simplified 3-column */}
       <div className="sm:hidden flex items-center justify-between px-3 py-2.5 gap-2">
         <div className="flex items-center gap-1.5 min-w-0">
           {r.flags.length > 0 && <span className="shrink-0 text-[11px] text-red-400">⚠</span>}
@@ -44,7 +44,7 @@ function Row({ i, local, r }: { i: number; local: MotionValue<number>; r: (typeo
         </div>
       </div>
 
-      {/* Desktop row — full 12-column grid */}
+      {/* Desktop row: full 12-column grid */}
       <div className="hidden sm:grid grid-cols-12 items-center gap-2 px-3 py-2.5">
         <div className="col-span-4 flex items-center gap-2">
           {r.flags.length > 0 && <span className="text-[11px] text-red-400">⚠</span>}

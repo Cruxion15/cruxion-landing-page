@@ -18,7 +18,7 @@ interface Particle {
 }
 
 const particles: Particle[] = [
-  // ── Row 1 — top strip (2–18vh) ──
+  // ── Row 1: top strip (2–18vh) ──
   { id: 1,  type: "diamond",  x: "6%",   y: "4vh",  size: 14, color: "rgba(245,158,11,0.7)",  duration: 13, delay: 0,   drift: { x: [0,22,-10,0],  y: [0,-18,12,0]  }, rotate: [0,360],       opacity: [0.4,0.75,0.4] },
   { id: 2,  type: "glowdot",  x: "20%",  y: "8vh",  size: 6,  color: "rgba(59,130,246,1)",    duration: 6,  delay: 1,   drift: { x: [0,-10,8,0],   y: [0,14,-6,0]   },                        opacity: [0.5,0.9,0.5] },
   { id: 3,  type: "ring",     x: "34%",  y: "3vh",  size: 22, color: "rgba(147,197,253,0.5)",  duration: 10, delay: 2,   drift: { x: [0,14,-8,0],   y: [0,-12,10,0]  }, scale: [1,1.3,1],     opacity: [0.3,0.6,0.3] },
@@ -27,7 +27,7 @@ const particles: Particle[] = [
   { id: 6,  type: "diamond",  x: "80%",  y: "14vh", size: 10, color: "rgba(59,130,246,0.65)",  duration: 14, delay: 1.5, drift: { x: [0,-12,18,0],  y: [0,10,-14,0]  }, rotate: [45,405],      opacity: [0.35,0.7,0.35] },
   { id: 7,  type: "cross",    x: "93%",  y: "5vh",  size: 14, color: "rgba(147,197,253,0.45)", duration: 11, delay: 4,   drift: { x: [0,-8,12,0],   y: [0,18,-10,0]  }, rotate: [0,180],       opacity: [0.3,0.6,0.3] },
 
-  // ── Row 2 — upper-mid (18–35vh) ──
+  // ── Row 2: upper-mid (18–35vh) ──
   { id: 8,  type: "glowdot",  x: "3%",   y: "22vh", size: 7,  color: "rgba(245,158,11,1)",    duration: 5,  delay: 0,   drift: { x: [0,12,-8,0],   y: [0,-20,12,0]  },                        opacity: [0.5,0.85,0.5] },
   { id: 9,  type: "ring",     x: "15%",  y: "28vh", size: 28, color: "rgba(59,130,246,0.4)",   duration: 12, delay: 2,   drift: { x: [0,20,-12,0],  y: [0,14,-18,0]  }, scale: [1,1.2,0.9,1], opacity: [0.25,0.55,0.25] },
   { id: 10, type: "triangle", x: "28%",  y: "20vh", size: 12, color: "rgba(245,158,11,0.5)",   duration: 18, delay: 1,   drift: { x: [0,-22,15,0],  y: [0,-10,18,0]  }, rotate: [0,240],       opacity: [0.3,0.6,0.3] },
@@ -37,7 +37,7 @@ const particles: Particle[] = [
   { id: 14, type: "square",   x: "85%",  y: "19vh", size: 9,  color: "rgba(245,158,11,0.5)",   duration: 20, delay: 3,   drift: { x: [0,-10,16,0],  y: [0,20,-10,0]  }, rotate: [0,180],       opacity: [0.3,0.6,0.3] },
   { id: 15, type: "glowdot",  x: "96%",  y: "27vh", size: 6,  color: "rgba(59,130,246,1)",     duration: 8,  delay: 5,   drift: { x: [0,-8,12,0],   y: [0,-14,10,0]  },                        opacity: [0.45,0.8,0.45] },
 
-  // ── Row 3 — mid (35–52vh) ──
+  // ── Row 3: mid (35–52vh) ──
   { id: 16, type: "ring",     x: "8%",   y: "40vh", size: 18, color: "rgba(245,158,11,0.45)",  duration: 9,  delay: 1,   drift: { x: [0,14,-10,0],  y: [0,-22,14,0]  }, scale: [1,1.35,1],    opacity: [0.3,0.6,0.3] },
   { id: 17, type: "glowdot",  x: "22%",  y: "46vh", size: 8,  color: "rgba(34,197,94,1)",      duration: 5,  delay: 2,   drift: { x: [0,-10,16,0],  y: [0,14,-10,0]  },                        opacity: [0.5,0.85,0.5] },
   { id: 18, type: "diamond",  x: "38%",  y: "38vh", size: 13, color: "rgba(59,130,246,0.65)",   duration: 14, delay: 0,   drift: { x: [0,18,-14,0],  y: [0,-12,18,0]  }, rotate: [45,405],      opacity: [0.4,0.7,0.4] },
@@ -46,7 +46,7 @@ const particles: Particle[] = [
   { id: 21, type: "triangle", x: "78%",  y: "49vh", size: 10, color: "rgba(59,130,246,0.55)",   duration: 16, delay: 4,   drift: { x: [0,-16,12,0],  y: [0,10,-16,0]  }, rotate: [0,360],       opacity: [0.3,0.6,0.3] },
   { id: 22, type: "square",   x: "91%",  y: "37vh", size: 8,  color: "rgba(34,197,94,0.5)",     duration: 19, delay: 0.5, drift: { x: [0,-12,18,0],  y: [0,16,-8,0]   }, rotate: [0,270],       opacity: [0.3,0.6,0.3] },
 
-  // ── Row 4 — lower-mid (52–70vh) ──
+  // ── Row 4: lower-mid (52–70vh) ──
   { id: 23, type: "glowdot",  x: "5%",   y: "57vh", size: 7,  color: "rgba(147,197,253,1)",     duration: 7,  delay: 2,   drift: { x: [0,14,-10,0],  y: [0,-16,12,0]  },                        opacity: [0.5,0.85,0.5] },
   { id: 24, type: "diamond",  x: "18%",  y: "64vh", size: 12, color: "rgba(245,158,11,0.6)",    duration: 12, delay: 0,   drift: { x: [0,-18,12,0],  y: [0,14,-18,0]  }, rotate: [0,360],       opacity: [0.35,0.7,0.35] },
   { id: 25, type: "ring",     x: "32%",  y: "55vh", size: 24, color: "rgba(59,130,246,0.4)",    duration: 11, delay: 3,   drift: { x: [0,16,-12,0],  y: [0,-10,16,0]  }, scale: [1,1.25,1],    opacity: [0.25,0.55,0.25] },
@@ -55,7 +55,7 @@ const particles: Particle[] = [
   { id: 28, type: "glowdot",  x: "75%",  y: "65vh", size: 5,  color: "rgba(59,130,246,1)",      duration: 5,  delay: 2.5, drift: { x: [0,-8,14,0],   y: [0,10,-14,0]  },                        opacity: [0.45,0.8,0.45] },
   { id: 29, type: "triangle", x: "88%",  y: "53vh", size: 11, color: "rgba(147,197,253,0.5)",   duration: 17, delay: 0,   drift: { x: [0,-14,10,0],  y: [0,-12,18,0]  }, rotate: [0,120,240,360], opacity: [0.3,0.6,0.3] },
 
-  // ── Row 5 — lower (70–86vh) ──
+  // ── Row 5: lower (70–86vh) ──
   { id: 30, type: "diamond",  x: "4%",   y: "74vh", size: 10, color: "rgba(59,130,246,0.65)",   duration: 13, delay: 1,   drift: { x: [0,20,-12,0],  y: [0,-18,14,0]  }, rotate: [45,405],      opacity: [0.4,0.7,0.4] },
   { id: 31, type: "glowdot",  x: "17%",  y: "80vh", size: 7,  color: "rgba(245,158,11,1)",      duration: 6,  delay: 3,   drift: { x: [0,-14,10,0],  y: [0,12,-18,0]  },                        opacity: [0.5,0.85,0.5] },
   { id: 32, type: "ring",     x: "30%",  y: "72vh", size: 20, color: "rgba(34,197,94,0.4)",     duration: 10, delay: 0,   drift: { x: [0,12,-16,0],  y: [0,-10,14,0]  }, scale: [1,1.3,1],     opacity: [0.25,0.55,0.25] },
@@ -64,7 +64,7 @@ const particles: Particle[] = [
   { id: 35, type: "cross",    x: "73%",  y: "85vh", size: 13, color: "rgba(245,158,11,0.5)",    duration: 12, delay: 1.5, drift: { x: [0,-10,18,0],  y: [0,10,-16,0]  }, rotate: [0,90],        opacity: [0.3,0.6,0.3] },
   { id: 36, type: "diamond",  x: "87%",  y: "71vh", size: 9,  color: "rgba(34,197,94,0.55)",    duration: 15, delay: 5,   drift: { x: [0,-16,12,0],  y: [0,-12,16,0]  }, rotate: [0,360],       opacity: [0.35,0.65,0.35] },
 
-  // ── Row 6 — bottom strip (86–100vh) ──
+  // ── Row 6: bottom strip (86–100vh) ──
   { id: 37, type: "glowdot",  x: "10%",  y: "90vh", size: 8,  color: "rgba(147,197,253,1)",     duration: 5,  delay: 0,   drift: { x: [0,12,-10,0],  y: [0,-16,12,0]  },                        opacity: [0.5,0.85,0.5] },
   { id: 38, type: "ring",     x: "25%",  y: "95vh", size: 25, color: "rgba(59,130,246,0.4)",    duration: 13, delay: 2.5, drift: { x: [0,-18,14,0],  y: [0,10,-14,0]  }, scale: [1,1.2,1],     opacity: [0.25,0.5,0.25] },
   { id: 39, type: "triangle", x: "40%",  y: "88vh", size: 10, color: "rgba(245,158,11,0.55)",   duration: 16, delay: 4,   drift: { x: [0,20,-14,0],  y: [0,-8,14,0]   }, rotate: [0,240],       opacity: [0.3,0.6,0.3] },

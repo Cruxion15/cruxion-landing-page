@@ -4,10 +4,10 @@ import { motion, MotionValue, useTransform } from "framer-motion";
 import { SceneFrame, useLocalProgress } from "./sceneUtils";
 
 const ITEMS = [
-  { title: "Week 4 — Recursion & Backtracking", sub: "12 problems · Python",      status: "open",     color: "amber" },
-  { title: "Week 3 — Dynamic Programming I",    sub: "Verified · 8/10 understood", status: "verified", color: "green" },
-  { title: "Week 2 — Sliding Window",           sub: "Re-attempt requested",        status: "review",   color: "blue"  },
-  { title: "Week 1 — Arrays & Two Pointers",    sub: "Complete · 100% UV",          status: "complete", color: "green" },
+  { title: "Week 4: Recursion & Backtracking", sub: "12 problems · Python",      status: "open",     color: "amber" },
+  { title: "Week 3: Dynamic Programming I",    sub: "Verified · 8/10 understood", status: "verified", color: "green" },
+  { title: "Week 2: Sliding Window",           sub: "Re-attempt requested",        status: "review",   color: "blue"  },
+  { title: "Week 1: Arrays & Two Pointers",    sub: "Complete · 100% UV",          status: "complete", color: "green" },
 ];
 
 function Card({ i, local, item }: { i: number; local: MotionValue<number>; item: (typeof ITEMS)[number] }) {

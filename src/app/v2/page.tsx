@@ -7,7 +7,7 @@ import V2CTA from "@/components/v2/V2CTA";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Cruxion — Engineering outcome infrastructure",
+  title: "Cruxion: Engineering outcome infrastructure",
   description:
     "The AI-native platform that takes engineering students from classroom to industry-ready. Skill tracks, Socratic AI mentorship, and verified outcomes. Apprentice → Engineer → Architect.",
 };

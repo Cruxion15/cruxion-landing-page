@@ -22,7 +22,7 @@ export default function HowItSlotsIn() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <RevealOnScroll>
           <h2 id="slots-heading" className="mx-auto max-w-3xl text-center text-3xl font-extrabold tracking-tight text-text-primary sm:text-4xl lg:text-5xl">
-            <SplitText>It replaces your assignment component —</SplitText>{" "}
+            <SplitText>It replaces your assignment component:</SplitText>{" "}
             <SplitText className="text-text-secondary" delay={0.4}>nothing else.</SplitText>
           </h2>
         </RevealOnScroll>

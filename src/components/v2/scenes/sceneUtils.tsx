@@ -25,7 +25,7 @@ export function useLocalProgress(
   return useTransform(progress, [start, end], [0, 1]);
 }
 
-/* Hard step function — scene is ON exactly when scroll is in [start, end), OFF otherwise.
+/* Hard step function: scene is ON exactly when scroll is in [start, end), OFF otherwise.
    Guarantees zero overlap between adjacent scenes. */
 export function SceneFrame({
   progress,

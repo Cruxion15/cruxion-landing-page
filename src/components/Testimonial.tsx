@@ -27,7 +27,7 @@ export default function Testimonial() {
             <blockquote className="relative">
               <p id="testimonial-heading" className="text-lg font-medium leading-relaxed text-text-primary sm:text-xl lg:text-2xl">
                 <SplitText stagger={0.02}>
-                  For the first time I can see which students actually understood the loop concept and which ones just had working code. That distinction — I have never had it in six years of teaching. I opened the heatmap on Monday morning and knew exactly who I needed to speak to before the lab session started.
+                  For the first time I can see which students actually understood the loop concept and which ones just had working code. That distinction. I have never had it in six years of teaching. I opened the heatmap on Monday morning and knew exactly who I needed to speak to before the lab session started.
                 </SplitText>
               </p>
             </blockquote>

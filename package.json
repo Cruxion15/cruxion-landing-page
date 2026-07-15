@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:aeo": "node scripts/check-aeo-citations.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

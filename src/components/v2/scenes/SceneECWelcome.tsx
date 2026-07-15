@@ -43,7 +43,7 @@ const COMPONENTS = [
   { name: "Arduino Uno R3", qty: 12, available: 8 },
   { name: "Raspberry Pi 4B", qty: 6, available: 4 },
   { name: "HC-SR04 Ultrasonic", qty: 20, available: 17 },
-  { name: "LED Kit — RGB", qty: 30, available: 28 },
+  { name: "LED Kit, RGB", qty: 30, available: 28 },
 ];
 
 function TrackCard({

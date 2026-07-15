@@ -27,7 +27,7 @@ const TEAM: Member[] = [
   },
   {
     name: "Visalakshi P L",
-    role: "Campus Head — CSE & Allied Branches",
+    role: "Campus Head, CSE & Allied Branches",
     linkedin: "https://www.linkedin.com/in/pl-visalakshi-profile",
     initials: "VP",
     photo: "/team/visalakshi.jpeg",
@@ -35,7 +35,7 @@ const TEAM: Member[] = [
   },
   {
     name: "Haswanth M",
-    role: "Curriculum Integration Lead — EC",
+    role: "Curriculum Integration Lead, EC",
     linkedin: "https://www.linkedin.com/in/haswanth-m-271252259",
     initials: "HM",
     photo: "/team/haswanth.jpeg",
@@ -43,7 +43,7 @@ const TEAM: Member[] = [
   },
   {
     name: "Sujan Suresh",
-    role: "Faculty Engagement Lead — EC",
+    role: "Faculty Engagement Lead, EC",
     linkedin: "https://www.linkedin.com/in/sujan-suresh-612165257",
     initials: "SS",
     photo: "/team/sujan.jpeg",
@@ -65,7 +65,7 @@ const VALUES = [
   {
     title: "Outcomes over optics",
     body:
-      "We measure ourselves on what students can actually do at the end of a semester — not on logins, hours, or vanity dashboards.",
+      "We measure ourselves on what students can actually do at the end of a semester, not on logins, hours, or vanity dashboards.",
   },
 ];
 
@@ -167,7 +167,7 @@ export default function TeamShowcase() {
             className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg"
           >
             A small team building outcome infrastructure for India&apos;s
-            engineering colleges — from the first line of code in a CS lab to
+            engineering colleges, from the first line of code in a CS lab to
             the first cloud dashboard lit up by an EC student&apos;s board.
           </motion.p>
         </div>
@@ -328,7 +328,7 @@ export default function TeamShowcase() {
                 Leading on the ground.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-text-secondary sm:text-base">
-                Each lead owns a slice of how Cruxion lands in real colleges —
+                Each lead owns a slice of how Cruxion lands in real colleges,
                 partnerships, curriculum integration, campus operations, and
                 faculty enablement.
               </p>

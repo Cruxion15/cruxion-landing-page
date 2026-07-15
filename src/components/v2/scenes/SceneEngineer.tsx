@@ -6,11 +6,11 @@ import { SceneFrame, useLocalProgress } from "./sceneUtils";
 // Value system: content=#0A1525 | panel=#1C3050 | editor=#060E1A | border=#2E4A6E
 
 const CHAT = [
-  { from: "mentor", text: "Hi! I'm your AI mentor. Ask for a hint when stuck — I won't give the answer, I'll help you think through it.", at: 0.02 },
+  { from: "mentor", text: "Hi! I'm your AI mentor. Ask for a hint when stuck, I won't give the answer, I'll help you think through it.", at: 0.02 },
   { from: "user",   text: "hi my fibonacci is wrong for n=0", at: 0.06 },
   { from: "mentor", text: "What does your function return when n is 0? Walk me through the first two lines.", at: 0.10 },
   { from: "user",   text: "oh i didn't handle the base case", at: 0.14 },
-  { from: "mentor", text: "Right — what's the smallest valid input you need to define explicitly?", at: 0.18 },
+  { from: "mentor", text: "Right, what's the smallest valid input you need to define explicitly?", at: 0.18 },
 ];
 
 const CODE_LINES = [
@@ -66,19 +66,19 @@ export default function SceneEngineer({ progress, range }: { progress: MotionVal
         </motion.div>
 
         {/*
-          Mobile (< sm): 2-pane — editor (4/7) + mentor (3/7) — problem pane hidden
-          Desktop (sm+): 3-pane 12-col grid — problem (3) + editor (5) + mentor (4)
+          Mobile (< sm): 2-pane: editor (4/7) + mentor (3/7), problem pane hidden
+          Desktop (sm+): 3-pane 12-col grid: problem (3) + editor (5) + mentor (4)
         */}
         <div className="mt-2 sm:mt-3 grid flex-1 grid-cols-7 sm:grid-cols-12 gap-2 overflow-hidden">
 
-          {/* ── Problem pane — desktop only ── */}
+          {/* ── Problem pane: desktop only ── */}
           <div className="hidden sm:flex sm:col-span-3 flex-col overflow-hidden rounded-xl border border-[#2E4A6E] bg-[#1C3050]">
             <div className="border-b border-[#2E4A6E] px-3 py-2 text-[11px] font-bold uppercase tracking-widest text-white">
               Problem
             </div>
             <div className="flex-1 overflow-hidden p-3 text-[12px] font-medium leading-relaxed text-white">
               <div className="mb-2 text-[13px] font-bold">Fibonacci Sequence</div>
-              <p>Write <span className="font-mono font-bold text-primary-light">fib(n)</span> — return the n-th Fibonacci number.</p>
+              <p>Write <span className="font-mono font-bold text-primary-light">fib(n)</span>: return the n-th Fibonacci number.</p>
               <div className="mt-3 rounded-lg bg-[#060E1A] p-2.5 font-mono text-[11px] leading-5">
                 <div className="text-[#4B6FA8]">Input:</div>
                 <div className="font-bold text-white">n = 6</div>

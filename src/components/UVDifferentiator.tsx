@@ -41,7 +41,7 @@ export default function UVDifferentiator() {
               whileHover={{ scale: 1.05, backgroundColor: "rgba(59,130,246,0.12)" }}
               transition={{ duration: 0.3 }}
             >
-              The core differentiator — no other platform does this
+              The core differentiator: no other platform does this
             </motion.span>
           </div>
         </RevealOnScroll>

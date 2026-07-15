@@ -43,7 +43,7 @@ export default function WorkspacePreview() {
 
         <RevealOnScroll delay={0.1}>
           <p className="mx-auto mt-5 max-w-3xl text-center text-base leading-relaxed text-text-secondary sm:text-lg">
-            A professional three-pane environment — real-world problem context, a
+            A professional three-pane environment: real-world problem context, a
             Monaco code editor (the same engine behind VS Code), and a Socratic AI
             mentor that asks questions instead of giving answers.
           </p>
@@ -187,7 +187,7 @@ export default function WorkspacePreview() {
                       <svg className="h-3.5 w-3.5 text-accent-green" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                         <polyline points="3 8 7 12 13 4" />
                       </svg>
-                      <span className="text-xs font-medium text-accent-green">10 / 10 tests passed — Understanding check unlocked</span>
+                      <span className="text-xs font-medium text-accent-green">10 / 10 tests passed. Understanding check unlocked</span>
                     </motion.div>
                   </motion.div>
 

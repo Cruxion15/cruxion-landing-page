@@ -50,7 +50,7 @@ function Node({ n, i, local }: { n: (typeof NODES)[number]; i: number; local: Mo
   );
 }
 
-/* Mobile node card — hooks must live at component level, not inside .map() */
+/* Mobile node card: hooks must live at component level, not inside .map() */
 function MobileNode({ n, i, local }: { n: (typeof NODES)[number]; i: number; local: MotionValue<number> }) {
   const at = 0.1 + i * 0.08;
   const op = useTransform(local, [at, at + 0.12], [0, 1]);
@@ -87,7 +87,7 @@ export default function SceneArchitect({ progress, range }: { progress: MotionVa
           </span>
           <h2 className="mt-2 sm:mt-3 text-lg sm:text-xl font-bold text-white">Designs systems that scale.</h2>
           <p className="mt-1 text-xs sm:text-sm font-medium text-white">
-            Cloud-native by default. AWS, GCP, Azure — the way real teams ship.
+            Cloud-native by default. AWS, GCP, Azure, the way real teams ship.
           </p>
         </motion.div>
 

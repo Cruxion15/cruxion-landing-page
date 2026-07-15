@@ -20,7 +20,7 @@ const TRACKS = [
   },
   {
     title: "Distributed Systems",
-    sub: "Consensus, queues, partitioning — the patterns behind every scale story.",
+    sub: "Consensus, queues, partitioning: the patterns behind every scale story.",
     meta: "Coming soon",
     enrolled: false,
     accent: "ghost",
@@ -103,7 +103,7 @@ export default function SceneCrucibleCourses({
             Where engineering comes alive.
           </h2>
           <p className="mt-2 max-w-2xl text-sm font-medium text-white">
-            Not a content library — an engineering creation environment. Access
+            Not a content library, an engineering creation environment. Access
             is granted section-wide by your faculty.
           </p>
         </motion.div>

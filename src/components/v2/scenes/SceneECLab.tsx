@@ -30,18 +30,18 @@ const PIN_DATA: Record<
   },
   D7: {
     label: "Digital pin 7",
-    detail: "HC-SR04 TRIG — sends 10μs ultrasonic pulse.",
+    detail: "HC-SR04 TRIG: sends 10μs ultrasonic pulse.",
     code: "digitalWrite(TRIG_PIN, HIGH);",
     color: "#3B82F6",
   },
   D6: {
     label: "Digital pin 6",
-    detail: "HC-SR04 ECHO — measures pulse return time.",
+    detail: "HC-SR04 ECHO: measures pulse return time.",
     code: "duration = pulseIn(ECHO_PIN, HIGH);",
     color: "#3B82F6",
   },
   "5V": {
-    label: "Power — 5V",
+    label: "Power: 5V",
     detail: "Powers LEDs and HC-SR04 sensor module.",
     code: "// 5V power rail",
     color: "#EF4444",
@@ -202,7 +202,7 @@ export default function SceneECLab({
 
       {/* Content */}
       <div className="flex flex-1 overflow-hidden">
-        {/* LEFT — lesson content */}
+        {/* LEFT: lesson content */}
         <motion.div
           style={{ opacity: leftOp, y: leftY }}
           className="flex flex-1 flex-col overflow-y-auto p-3"
@@ -219,7 +219,7 @@ export default function SceneECLab({
             Traffic lights are embedded systems, not decorations.
           </h3>
           <p className="mt-1.5 text-[10px] leading-relaxed text-text-secondary">
-            Build a smart intersection one connection at a time — controller,
+            Build a smart intersection one connection at a time: controller,
             power, LED outputs, ultrasonic sensing, then adaptive logic.
           </p>
 
@@ -284,7 +284,7 @@ export default function SceneECLab({
           </div>
         </motion.div>
 
-        {/* RIGHT — component lab */}
+        {/* RIGHT: component lab */}
         <motion.div
           style={{ opacity: rightOp }}
           className="hidden w-[44%] shrink-0 flex-col border-l border-[#2E4A6E] sm:flex"

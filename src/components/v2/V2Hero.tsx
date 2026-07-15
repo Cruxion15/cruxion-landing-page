@@ -83,7 +83,7 @@ export default function V2Hero() {
         >
           Built to take engineering students from classroom to industry-ready.
           Cruxion gives colleges{" "}
-          <span className="text-text-primary">structured skill tracks — from system design to cloud engineering on AWS, GCP, and Azure — with verified outcomes</span> that employers actually look for.
+          <span className="text-text-primary">structured skill tracks, from system design to cloud engineering on AWS, GCP, and Azure, with verified outcomes</span> that employers actually look for.
         </motion.p>
 
         <motion.div

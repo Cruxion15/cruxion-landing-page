@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Cruxion — Engineering outcome infrastructure";
+export const alt = "Cruxion: Engineering outcome infrastructure";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -36,7 +36,7 @@ export default async function OpengraphImage() {
             lineHeight: 1.3,
           }}
         >
-          AI-native engineering skill tracks — cloud, embedded systems, IoT.
+          AI-native engineering skill tracks: cloud, embedded systems, IoT.
           Apprentice → Engineer → Architect.
         </div>
       </div>

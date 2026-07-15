@@ -122,7 +122,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 1.3, ease: [0.33, 1, 0.68, 1] }}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg md:mt-8"
         >
-          The only platform that verifies understanding — not just output. Plugs
+          The only platform that verifies understanding, not just output. Plugs
           directly into your assignment component. Zero curriculum changes. Marks
           export in one click.
         </motion.p>

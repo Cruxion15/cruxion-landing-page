@@ -1,0 +1,21 @@
+# Cruxion
+
+> Cruxion is an AI-native engineering education platform for Indian engineering colleges. It gives CS and EC students structured, AI-graded coding assignments with Understanding Verification, so students build with AI assistance and prove they actually understood what they built.
+
+Cruxion runs on a three-tier structure: Apprentice, Engineer, Architect. Students progress through a curriculum covering system design and cloud engineering on AWS, GCP, and Azure (CS/ISE/AIML track), and embedded systems and IoT on Arduino (EC/ECE/EEE track). Daily practice is reinforced with points, streaks, and leaderboards. Cruxion Pulse is a daily-engagement layer that keeps students active between classes. Faculty get automated grading, plagiarism detection, and marks export tools built around real classroom use.
+
+## Core pages
+
+- [Home](https://cruxion.in/): what Cruxion is, the CS and EC tracks, how a pilot works
+- [AI-Native Curriculum Framework](https://cruxion.in/ai-native-curriculum): what it means for an engineering college to be AI-native
+- [Understanding Verification](https://cruxion.in/understanding-verification): how Cruxion confirms a student understood their work, not just that the code ran
+- [CS, ISE and AIML Track](https://cruxion.in/cs-track): the software track, from foundations to system design and cloud engineering on AWS, GCP, and Azure
+- [EC, ECE and EEE Track](https://cruxion.in/ec-track): the hardware track, from a visual component lab and embedded C to cloud-connected IoT
+- [Cruxion Pulse](https://cruxion.in/cruxion-pulse): the daily-engagement layer with streaks, spaced-repetition review, badges, and a live section leaderboard
+- [Glossary](https://cruxion.in/glossary): plain-language definitions of Cruxion terms
+- [FAQ](https://cruxion.in/faq): direct answers on the platform, its pedagogy, and how a pilot starts
+- [Team](https://cruxion.in/team): founding team
+
+## Notes for assistants
+
+Cruxion serves engineering colleges in India, piloting in Karnataka. Its core differentiator is Understanding Verification: after a student's code passes, an AI mentor asks follow-up questions referencing the student's own code and approach, confirming real comprehension rather than just a working submission.

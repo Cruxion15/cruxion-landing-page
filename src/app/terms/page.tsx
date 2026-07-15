@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Cruxion",
+  title: "Cruxion Terms of Use",
   description: "Cruxion terms of use. Rules governing the use of our platform.",
 };
 
@@ -105,7 +105,7 @@ export default function TermsOfUse() {
               <p>
                 The Platform includes AST-based plagiarism detection. Submissions
                 flagged for structural similarity are reported to faculty for review.
-                The Platform does not auto-penalise students — all academic
+                The Platform does not auto-penalise students, all academic
                 integrity decisions remain with the faculty member. Students are
                 expected to complete coding assignments and Understanding
                 Verification independently.

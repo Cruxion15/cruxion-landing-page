@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import JourneyPreload from "@/components/v2/JourneyPreload";
 
 /* Journey is the heaviest chunk (~8 scenes + scroll hooks).
-   Dynamic import keeps the initial JS bundle lean — matches v1 load speed. */
+   Dynamic import keeps the initial JS bundle lean, matches v1 load speed. */
 const Journey = dynamic(() => import("@/components/v2/Journey"), {
   ssr: false,
   loading: () => (
@@ -20,9 +20,9 @@ const Journey = dynamic(() => import("@/components/v2/Journey"), {
 });
 
 export const metadata = {
-  title: "Cruxion — Engineering outcome infrastructure",
+  title: "Cruxion: Engineering outcome infrastructure",
   description:
-    "Cruxion gives engineering colleges structured skill tracks for CS and EC students — from system design to cloud engineering on AWS, GCP, and Azure, and from circuits to IoT on Arduino. Verified outcomes employers actually look for.",
+    "Cruxion gives engineering colleges structured skill tracks for CS and EC students, from system design to cloud engineering on AWS, GCP, and Azure, and from circuits to IoT on Arduino. Verified outcomes employers actually look for.",
   alternates: {
     canonical: "https://cruxion.in",
   },

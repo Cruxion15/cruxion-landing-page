@@ -13,7 +13,7 @@ const STAYS = [
 ];
 
 const ADDS = [
-  "Cloud Engineering track — AWS · GCP · Azure",
+  "Cloud Engineering track: AWS · GCP · Azure",
   "AI mentor for every student",
   "Understanding Verification",
   "Proctored exam mode + CSV export",
@@ -70,7 +70,7 @@ export default function V2Integration() {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-secondary">
             Your faculty teach the syllabus. Cruxion pipes in the workflows,
-            tools, and expectations of the engineering industry — so students
+            tools, and expectations of the engineering industry, so students
             graduate fluent in both. <span className="text-text-primary">No
             curriculum changes. No new infrastructure. Faculty stay in
             command.</span>
@@ -84,7 +84,7 @@ export default function V2Integration() {
             className="relative rounded-2xl border border-border-subtle bg-surface-card/40 p-7 backdrop-blur"
           >
             <div className="text-[10px] uppercase tracking-[0.2em] text-text-tertiary">
-              Your college — stays exactly as it is
+              Your college: stays exactly as it is
             </div>
             <ul className="mt-5 space-y-3">
               {STAYS.map((s) => (
@@ -104,7 +104,7 @@ export default function V2Integration() {
             className="relative rounded-2xl border border-primary-blue/30 bg-gradient-to-br from-primary-blue/10 to-transparent p-7 backdrop-blur"
           >
             <div className="text-[10px] uppercase tracking-[0.2em] text-primary-light">
-              Cruxion — adds on top
+              Cruxion: adds on top
             </div>
             <ul className="mt-5 space-y-3">
               {ADDS.map((s) => (

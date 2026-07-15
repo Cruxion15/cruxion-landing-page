@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { RevealOnScroll } from "./AnimationUtils";
 
 const links = [
+  { label: "FAQ", href: "/faq" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Use", href: "/terms" },
 ];

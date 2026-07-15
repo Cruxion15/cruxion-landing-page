@@ -4,7 +4,7 @@ import { motion, MotionValue, useTransform } from "framer-motion";
 import { SceneFrame, useLocalProgress } from "./sceneUtils";
 
 const CODE_LINES = [
-  { n: 1,  tokens: [{ t: "// Smart Traffic Controller — Cruxion EC", c: "text-text-tertiary" }] },
+  { n: 1,  tokens: [{ t: "// Smart Traffic Controller: Cruxion EC", c: "text-text-tertiary" }] },
   { n: 2,  tokens: [{ t: "#define ", c: "text-accent-amber" }, { t: "GREEN_LED  ", c: "text-primary-light" }, { t: "10", c: "text-accent-amber" }] },
   { n: 3,  tokens: [{ t: "#define ", c: "text-accent-amber" }, { t: "YELLOW_LED ", c: "text-primary-light" }, { t: "9", c: "text-accent-amber" }] },
   { n: 4,  tokens: [{ t: "#define ", c: "text-accent-amber" }, { t: "RED_LED    ", c: "text-primary-light" }, { t: "8", c: "text-accent-amber" }] },
@@ -30,13 +30,13 @@ const CODE_LINES = [
 
 const SERIAL_LINES = [
   { t: "23:14:01", msg: "Setup complete. Pins initialized.", color: "text-text-tertiary" },
-  { t: "23:14:02", msg: "Distance: 45cm — traffic clear", color: "text-accent-green" },
+  { t: "23:14:02", msg: "Distance: 45cm, traffic clear", color: "text-accent-green" },
   { t: "23:14:02", msg: "GREEN_LED → HIGH", color: "text-primary-light" },
-  { t: "23:14:04", msg: "Distance: 17cm — vehicle detected!", color: "text-accent-amber" },
+  { t: "23:14:04", msg: "Distance: 17cm, vehicle detected!", color: "text-accent-amber" },
   { t: "23:14:04", msg: "RED_LED → HIGH · stopping traffic", color: "text-red-400" },
-  { t: "23:14:06", msg: "Distance: 62cm — path clear", color: "text-accent-green" },
+  { t: "23:14:06", msg: "Distance: 62cm, path clear", color: "text-accent-green" },
   { t: "23:14:06", msg: "GREEN_LED → HIGH", color: "text-primary-light" },
-  { t: "23:14:08", msg: "Distance: 12cm — vehicle detected!", color: "text-accent-amber" },
+  { t: "23:14:08", msg: "Distance: 12cm, vehicle detected!", color: "text-accent-amber" },
   { t: "23:14:08", msg: "RED_LED → HIGH · stopping traffic", color: "text-red-400" },
 ];
 
@@ -64,7 +64,7 @@ export default function SceneECEmbed({
             Crucible · Apprentice
           </span>
           <span className="text-text-tertiary">/</span>
-          <span className="text-white">Step 5 — Write the control logic</span>
+          <span className="text-white">Step 5: Write the control logic</span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="h-1.5 w-1.5 rounded-full bg-accent-green" />
@@ -169,7 +169,7 @@ export default function SceneECEmbed({
               </p>
               <div className="mt-2 flex gap-1">
                 <div className="flex-1 rounded border border-primary-blue/30 bg-primary-blue/10 px-1.5 py-1 text-[8px] text-white">
-                  Vehicle is in range — stop traffic
+                  Vehicle is in range, stop traffic
                 </div>
               </div>
             </div>
