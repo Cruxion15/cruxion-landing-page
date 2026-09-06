@@ -31,6 +31,12 @@ export default function V2Nav() {
           >
             Team
           </Link>
+          <Link
+            href="/verify"
+            className="text-text-secondary transition-colors hover:text-text-primary"
+          >
+            Verify a certificate
+          </Link>
           <a
             href="https://app.cruxion.in"
             className="text-text-secondary transition-colors hover:text-text-primary"
@@ -90,6 +96,13 @@ export default function V2Nav() {
                 className="rounded-lg px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-surface-card hover:text-text-primary"
               >
                 Team
+              </Link>
+              <Link
+                href="/verify"
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-surface-card hover:text-text-primary"
+              >
+                Verify a certificate
               </Link>
               <a
                 href="https://app.cruxion.in"
