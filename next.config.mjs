@@ -1,5 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        // Certificate verification lives in the platform app, but its URL is
+        // printed on certificates and scanned by people who have never heard
+        // of us — so it goes out on the brand domain, not an "app." subdomain
+        // that reads as "log in here".
+        //
+        // A redirect rather than a rewrite, deliberately: a rewrite proxies the
+        // app's HTML through this origin, so its /_next/static/* assets would be
+        // requested from cruxion.in and 404 against this build. Making that work
+        // needs an assetPrefix on the platform app plus a CSP here widened to
+        // allow scripts and styles from app.cruxion.in — a real weakening of
+        // this site's headers for a cosmetic gain in the address bar.
+        source: "/verify/:code",
+        destination: "https://app.cruxion.in/verify/:code",
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {

@@ -23,7 +23,7 @@ export default function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2" aria-label="Cruxion home">
-            <img src="/icon.svg" alt="Cruxion icon" className="h-7 w-7 rounded-md" />
+            <img src="/cruxion-logo.png" alt="Cruxion" className="h-7 w-7 rounded-md" />
             <span className="text-xl font-bold tracking-tight text-text-primary">
               Crux
             </span>

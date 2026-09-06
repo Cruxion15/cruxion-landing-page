@@ -17,8 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cruxion.in"),
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: "/cruxion-logo.png",
+    shortcut: "/cruxion-logo.png",
+    apple: "/cruxion-logo.png",
   },
   title: "Cruxion: Engineering outcome infrastructure",
   description:
@@ -76,7 +77,7 @@ const jsonLd = {
   "@type": "Organization",
   name: "Cruxion",
   url: "https://cruxion.in",
-  logo: "https://cruxion.in/icon.svg",
+  logo: "https://cruxion.in/cruxion-logo.png",
   description:
     "Cruxion is an AI-native engineering education platform that takes CS and EC students from classroom to industry-ready. Structured skill tracks, from system design to cloud engineering on AWS, GCP, and Azure, and from embedded systems to IoT on Arduino, with Socratic AI mentorship and verified outcomes.",
   foundingLocation: "India",
