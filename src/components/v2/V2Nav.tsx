@@ -16,7 +16,7 @@ export default function V2Nav() {
     >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link
-          href="/students"
+          href="/"
           title="Cruxion for students and working engineers"
           className="text-base font-semibold tracking-tight"
           onClick={() => setOpen(false)}

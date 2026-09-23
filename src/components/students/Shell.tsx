@@ -65,7 +65,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <Link href="/verify" className="hidden whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary sm:block">
             Verify a certificate
           </Link>
-          <Link href="/" className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary">
+          <Link href="/college" className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary">
             For colleges
           </Link>
           <CTA>Get started</CTA>

@@ -2,6 +2,9 @@
 const nextConfig = {
   async redirects() {
     return [
+      // The individual-learner tour was /students before it became the home
+      // page; keep links already shared from that week working.
+      { source: "/students", destination: "/", permanent: true },
       {
         // Certificate verification lives in the platform app, but its URL is
         // printed on certificates and scanned by people who have never heard

@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://cruxion.in/college",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://cruxion.in/ai-native-curriculum",
       lastModified: new Date(),
       changeFrequency: "monthly",

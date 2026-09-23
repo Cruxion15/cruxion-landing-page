@@ -1,46 +1,47 @@
-import dynamic from "next/dynamic";
-import V2Nav from "@/components/v2/V2Nav";
-import V2Hero from "@/components/v2/V2Hero";
-import V2Tiers from "@/components/v2/V2Tiers";
-import V2Integration from "@/components/v2/V2Integration";
-import V2CTA from "@/components/v2/V2CTA";
+import type { Metadata } from "next";
+import { Bricolage_Grotesque } from "next/font/google";
+import Shell from "@/components/students/Shell";
+import Hero from "@/components/students/Hero";
+import Learn from "@/components/students/Learn";
+import TwoSumDemo from "@/components/students/TwoSumDemo";
+import AiTrack from "@/components/students/AiTrack";
+import SystemDesign from "@/components/students/SystemDesign";
+import Features from "@/components/students/Features";
+import Companies from "@/components/students/Companies";
+import FinalCTA from "@/components/students/FinalCTA";
 import Footer from "@/components/Footer";
-import JourneyPreload from "@/components/v2/JourneyPreload";
+import { Scene } from "@/components/students/ui";
 
-/* Journey is the heaviest chunk (~8 scenes + scroll hooks).
-   Dynamic import keeps the initial JS bundle lean, matches v1 load speed. */
-const Journey = dynamic(() => import("@/components/v2/Journey"), {
-  ssr: false,
-  loading: () => (
-    <div
-      className="relative h-[500vh] sm:h-[650vh] lg:h-[850vh]"
-      aria-hidden="true"
-    />
-  ),
-});
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 
-export const metadata = {
-  title: "Cruxion: Engineering outcome infrastructure",
+export const metadata: Metadata = {
+  title: "Cruxion: learn DSA and AI with Crux, your guide",
   description:
-    "Cruxion gives engineering colleges structured skill tracks for CS and EC students, from system design to cloud engineering on AWS, GCP, and Azure, and from circuits to IoT on Arduino. Verified outcomes employers actually look for.",
-  alternates: {
-    canonical: "https://cruxion.in",
+    "For students and working engineers. Learn DSA and LLM engineering by predicting, building and defending every idea, with Crux, an AI companion that notices what you're stuck on. System design coming next.",
+  alternates: { canonical: "https://cruxion.in" },
+  openGraph: {
+    title: "Stop watching tutorials. Start getting good.",
+    description: "Take the tour with Crux: DSA, AI and LLMs, and system design, learned by doing. Sign up with Google.",
+    url: "https://cruxion.in",
   },
 };
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <V2Nav />
-      <JourneyPreload />
-      <main className="bg-surface-bg text-text-primary">
-        <V2Hero />
-        <V2Tiers />
-        <Journey />
-        <V2Integration />
-        <V2CTA />
-      </main>
-      <Footer />
-    </>
+    <div className={`${display.variable} bg-surface-bg text-text-primary`}>
+      <Shell>
+        <main className="overflow-x-clip">
+          <Hero />
+          <Scene><Learn /></Scene>
+          <Scene><TwoSumDemo /></Scene>
+          <Scene><AiTrack /></Scene>
+          <Scene><SystemDesign /></Scene>
+          <Scene><Features /></Scene>
+          <Scene><Companies /></Scene>
+          <Scene><FinalCTA /></Scene>
+        </main>
+        <Footer />
+      </Shell>
+    </div>
   );
 }
