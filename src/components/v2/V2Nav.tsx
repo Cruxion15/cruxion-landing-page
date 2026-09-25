@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { GET_STARTED_URL } from "@/lib/appLinks";
 
 export default function V2Nav() {
   const [open, setOpen] = useState(false);
@@ -46,9 +47,15 @@ export default function V2Nav() {
           </a>
           <a
             href="#cta"
-            className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-surface-bg transition-transform hover:scale-[1.02]"
+            className="text-text-secondary transition-colors hover:text-text-primary"
           >
             Request a pilot
+          </a>
+          <a
+            href={GET_STARTED_URL}
+            className="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-surface-bg transition-transform hover:scale-[1.02]"
+          >
+            Get started
           </a>
         </div>
 
@@ -115,9 +122,16 @@ export default function V2Nav() {
               <a
                 href="#cta"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-full bg-white px-4 py-2.5 text-center text-sm font-semibold text-surface-bg transition-transform hover:scale-[1.02]"
+                className="rounded-lg px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-surface-card hover:text-text-primary"
               >
                 Request a pilot
+              </a>
+              <a
+                href={GET_STARTED_URL}
+                onClick={() => setOpen(false)}
+                className="mt-2 rounded-full bg-white px-4 py-2.5 text-center text-sm font-semibold text-surface-bg transition-transform hover:scale-[1.02]"
+              >
+                Get started
               </a>
             </nav>
           </motion.div>

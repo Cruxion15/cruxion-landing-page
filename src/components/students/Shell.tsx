@@ -1,21 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { AnimatePresence, MotionConfig, motion, useScroll, useSpring } from "framer-motion";
 import { Crux } from "./Crux";
 import { STOPS } from "./tour";
+import { DASHBOARD_URL, SIGN_IN_URL } from "@/lib/appLinks";
 import { CTA, DISPLAY, EASE, Typewriter, cx } from "./ui";
 
 /**
- * Page chrome for the tour: a quiet nav (logo left; "For colleges" and the
- * sign-up on the right), a thin progress line, and Crux walking the visitor through
+ * Page chrome for the tour: a quiet nav (logo left; links and the sign-up on
+ * the right, links fold into a menu below lg), a thin progress line, and Crux walking the visitor through
  * each stop. Sections mark themselves with data-stop (a STOPS id, or
  * "tour"/"finale", which have their own big Crux and hide the guide).
  */
+const LINKS = [
+  { label: "Dashboard", href: DASHBOARD_URL },
+  { label: "For colleges", href: "/college" },
+  { label: "Verify a certificate", href: "/verify" },
+  { label: "Sign in", href: SIGN_IN_URL },
+];
+
 export default function Shell({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState<string>("tour");
   const [open, setOpen] = useState(true);
+  const [menu, setMenu] = useState(false);
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24 });
 
@@ -61,16 +69,48 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <a href="#tour" className={`${DISPLAY} text-lg font-bold tracking-tight`}>
           Crux<span className="text-primary-blue">ion</span>
         </a>
-        <div className="flex items-center gap-1 sm:gap-3">
-          <Link href="/verify" className="hidden whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary sm:block">
-            Verify a certificate
-          </Link>
-          <Link href="/college" className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary">
-            For colleges
-          </Link>
+        <div className="flex items-center gap-1 lg:gap-2">
+          {LINKS.map((l) => (
+            <a key={l.label} href={l.href} className="hidden whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary lg:block">
+              {l.label}
+            </a>
+          ))}
           <CTA>Get started</CTA>
+          <button
+            type="button"
+            onClick={() => setMenu((m) => !m)}
+            aria-label={menu ? "Close menu" : "Open menu"}
+            aria-expanded={menu}
+            aria-controls="mobile-menu"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-text-primary hover:bg-white/5 lg:hidden"
+          >
+            <span className="relative block h-3.5 w-5">
+              <motion.span animate={menu ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }} className="absolute left-0 top-0 h-[1.5px] w-5 bg-current" />
+              <motion.span animate={{ opacity: menu ? 0 : 1 }} className="absolute left-0 top-1/2 h-[1.5px] w-5 -translate-y-1/2 bg-current" />
+              <motion.span animate={menu ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }} className="absolute bottom-0 left-0 h-[1.5px] w-5 bg-current" />
+            </span>
+          </button>
         </div>
       </motion.nav>
+
+      <AnimatePresence>
+        {menu && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: EASE }}
+            className="fixed inset-x-3 top-[4.75rem] z-40 rounded-3xl bg-surface-bg/95 p-2 ring-1 ring-white/10 backdrop-blur-xl sm:inset-x-6 sm:top-20 lg:hidden"
+          >
+            {LINKS.map((l) => (
+              <a key={l.label} href={l.href} onClick={() => setMenu(false)} className="block rounded-2xl px-4 py-3 text-base font-medium text-text-secondary transition-colors hover:bg-white/5 hover:text-text-primary">
+                {l.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {children}
 
