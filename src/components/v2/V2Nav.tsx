@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { GET_STARTED_URL } from "@/lib/appLinks";
+import { CAREERS_URL, GET_STARTED_URL } from "@/lib/appLinks";
 
 export default function V2Nav() {
   const [open, setOpen] = useState(false);
@@ -39,6 +39,12 @@ export default function V2Nav() {
           >
             Verify a certificate
           </Link>
+          <a
+            href={CAREERS_URL}
+            className="text-text-secondary transition-colors hover:text-text-primary"
+          >
+            Careers
+          </a>
           <a
             href="https://app.cruxion.in"
             className="text-text-secondary transition-colors hover:text-text-primary"
@@ -112,6 +118,13 @@ export default function V2Nav() {
               >
                 Verify a certificate
               </Link>
+              <a
+                href={CAREERS_URL}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-surface-card hover:text-text-primary"
+              >
+                Careers
+              </a>
               <a
                 href="https://app.cruxion.in"
                 onClick={() => setOpen(false)}

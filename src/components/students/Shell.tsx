@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, MotionConfig, motion, useScroll, useSpring } from "framer-motion";
 import { Crux } from "./Crux";
 import { STOPS } from "./tour";
-import { DASHBOARD_URL, SIGN_IN_URL } from "@/lib/appLinks";
+import { CAREERS_URL, DASHBOARD_URL, SIGN_IN_URL } from "@/lib/appLinks";
 import { CTA, DISPLAY, EASE, Typewriter, cx } from "./ui";
 
 /**
@@ -17,6 +17,7 @@ const LINKS = [
   { label: "Dashboard", href: DASHBOARD_URL },
   { label: "For colleges", href: "/college" },
   { label: "Verify a certificate", href: "/verify" },
+  { label: "Careers", href: CAREERS_URL },
   { label: "Sign in", href: SIGN_IN_URL },
 ];
 

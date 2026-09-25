@@ -21,6 +21,11 @@ const nextConfig = {
         destination: "https://app.cruxion.in/verify/:code",
         permanent: true,
       },
+      // Careers pages live in the platform app (job pages post applications to
+      // the API, which this site's CSP deliberately does not allow). Temporary
+      // redirects so the brand URL can move in-house later without stale caches.
+      { source: "/careers", destination: "https://app.cruxion.in/careers", permanent: false },
+      { source: "/careers/:slug", destination: "https://app.cruxion.in/careers/:slug", permanent: false },
     ];
   },
 
