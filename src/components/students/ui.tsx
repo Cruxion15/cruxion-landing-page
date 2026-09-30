@@ -3,10 +3,21 @@
 import { motion, useInView, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import { GET_STARTED_URL } from "@/lib/appLinks";
+import { GET_STARTED_URL, JOIN_URL, WAITLIST_URL } from "@/lib/appLinks";
 
 /** Skips the login page — straight to Google, enrolled as a free individual learner. */
 export const SIGNUP_URL = GET_STARTED_URL;
+export { JOIN_URL, WAITLIST_URL };
+
+/** The quiet second button beside a CTA: Pro is invite-only, so this is how a visitor asks for it. */
+export function WaitlistLink({ children = "Join the Pro waitlist", className }: { children?: ReactNode; className?: string }) {
+  return (
+    <a href={WAITLIST_URL} className={cx("inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-text-primary ring-1 ring-white/15 transition-colors hover:bg-white/5", className)}>
+      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent-amber" /> {children}
+    </a>
+  );
+}
+
 export const EASE = [0.32, 0.72, 0, 1] as const;
 /** The page's display face (Bricolage Grotesque), loaded in app/students/page.tsx. */
 export const DISPLAY = "font-[family-name:var(--font-display)]";
@@ -185,12 +196,12 @@ export function Bezel({ children, className, core }: { children: ReactNode; clas
 }
 
 /** Pill CTA with a nested arrow and a light magnetic pull toward the cursor. */
-export function CTA({ children, className, size = "md" }: { children: ReactNode; className?: string; size?: "md" | "lg" }) {
+export function CTA({ children, className, size = "md", href = SIGNUP_URL }: { children: ReactNode; className?: string; size?: "md" | "lg"; href?: string }) {
   const x = useSpring(useMotionValue(0), { stiffness: 220, damping: 18 });
   const y = useSpring(useMotionValue(0), { stiffness: 220, damping: 18 });
   return (
     <motion.a
-      href={SIGNUP_URL}
+      href={href}
       style={{ x, y }}
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse") return;

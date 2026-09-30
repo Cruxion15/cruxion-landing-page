@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { CAREERS_URL, GET_STARTED_URL } from "@/lib/appLinks";
+import { JOBS_URL, GET_STARTED_URL } from "@/lib/appLinks";
 
 export default function V2Nav() {
   const [open, setOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function V2Nav() {
             Verify a certificate
           </Link>
           <a
-            href={CAREERS_URL}
+            href={JOBS_URL}
             className="text-text-secondary transition-colors hover:text-text-primary"
           >
             Careers
@@ -119,7 +119,7 @@ export default function V2Nav() {
                 Verify a certificate
               </Link>
               <a
-                href={CAREERS_URL}
+                href={JOBS_URL}
                 onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-2.5 text-sm text-text-secondary transition-colors hover:bg-surface-card hover:text-text-primary"
               >

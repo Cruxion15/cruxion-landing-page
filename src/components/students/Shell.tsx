@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, MotionConfig, motion, useScroll, useSpring } from "framer-motion";
 import { Crux } from "./Crux";
 import { STOPS } from "./tour";
-import { CAREERS_URL, DASHBOARD_URL, SIGN_IN_URL } from "@/lib/appLinks";
+import { JOBS_URL, DASHBOARD_URL, SIGN_IN_URL } from "@/lib/appLinks";
 import { CTA, DISPLAY, EASE, Typewriter, cx } from "./ui";
 
 /**
@@ -15,9 +15,10 @@ import { CTA, DISPLAY, EASE, Typewriter, cx } from "./ui";
  */
 const LINKS = [
   { label: "Dashboard", href: DASHBOARD_URL },
+  { label: "Pricing", href: "/pricing" },
   { label: "For colleges", href: "/college" },
   { label: "Verify a certificate", href: "/verify" },
-  { label: "Careers", href: CAREERS_URL },
+  { label: "Careers", href: JOBS_URL },
   { label: "Sign in", href: SIGN_IN_URL },
 ];
 
@@ -67,7 +68,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         className="fixed inset-x-3 top-4 z-40 mx-auto flex max-w-7xl items-center justify-between rounded-full bg-surface-bg/70 py-1.5 pl-5 pr-1.5 ring-1 ring-white/10 backdrop-blur-xl sm:inset-x-6 sm:top-5"
         aria-label="Main"
       >
-        <a href="#tour" className={`${DISPLAY} text-lg font-bold tracking-tight`}>
+        <a href="/#tour" className={`${DISPLAY} text-lg font-bold tracking-tight`}>
           Crux<span className="text-primary-blue">ion</span>
         </a>
         <div className="flex items-center gap-1 lg:gap-2">

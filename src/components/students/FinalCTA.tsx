@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Crux } from "./Crux";
-import { CTA, EASE, Reveal, ScrollWords, DISPLAY } from "./ui";
+import { CTA, EASE, Reveal, ScrollWords, DISPLAY, WaitlistLink } from "./ui";
 
 // Sparks that burst out of Crux when the finale scrolls in.
 const SPARKS = Array.from({ length: 14 }, (_, i) => {
@@ -45,8 +45,9 @@ export default function FinalCTA() {
             Sign up with Google and pick DSA or AI. Your first lesson takes about 16 minutes, and I&apos;ll be right there for it.
           </p>
         </Reveal>
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9, delay: 0.4, ease: EASE }} className="mt-9">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.9, delay: 0.4, ease: EASE }} className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <CTA size="lg">Get started free</CTA>
+          <WaitlistLink />
         </motion.div>
         <Reveal delay={0.5} y={12}>
           <Link href="/verify" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-text-tertiary transition-colors hover:text-text-primary">

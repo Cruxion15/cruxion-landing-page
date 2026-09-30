@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { Crux, type Pose } from "./Crux";
-import { CTA, DISPLAY, EASE, SplitWords, Typewriter, cx } from "./ui";
+import { CTA, DISPLAY, EASE, SplitWords, Typewriter, WaitlistLink, cx } from "./ui";
 
 const WHO = [
   {
@@ -97,6 +97,7 @@ export default function Hero() {
             className="mt-6 flex flex-wrap items-center gap-5"
           >
             <CTA size="lg">Get started free</CTA>
+            <WaitlistLink />
             <a href="#learn" className="group inline-flex items-center gap-2 text-sm font-semibold text-text-secondary hover:text-text-primary">
               Or take the tour with Crux
               <motion.span animate={{ y: [0, 4, 0] }} transition={{ duration: 1.6, repeat: Infinity }} aria-hidden="true">↓</motion.span>
