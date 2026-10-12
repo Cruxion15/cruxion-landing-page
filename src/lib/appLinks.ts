@@ -9,8 +9,8 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://app.cruxion.in";
 export const WAITLIST_URL = `${APP_URL}/waitlist`;
 export const JOIN_URL = `${APP_URL}/join`;
 
-/** The DSA plan: open to visitors without an account. */
-export const DASHBOARD_URL = `${APP_URL}/learn/dsa`;
+/** Every track in plain words (coding, AI, how apps work, interview problems), open to visitors without an account. Not the DSA sheet: jargon first scared new students off. */
+export const DASHBOARD_URL = `${APP_URL}/learn`;
 export const SIGN_IN_URL = APP_URL;
 /** Open roles at Cruxion and partner companies; job pages and the application form live in the platform app. */
 export const JOBS_URL = `${APP_URL}/jobs`;
